@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="spells.css" type="text/css">
+    <title>Druid Spells</title>
+</head>
+
+<body>
+
+    <h3>0 Level (Orisons)</h3>
+    <table>
+
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>School</th>
+            <th>Comp.</th>          <!-- Components -->
+            <th>Time</th>           <!-- Casting Time -->
+            <th>Range</th>
+            <th>Aim</th>            <!-- Target, Effect, Area -->
+            <th>Duration</th>
+            <th>Save</th>           <!-- Saving Throw -->
+            <th>S. R.</th>          <!-- Spell Resistance -->
+            <th>Page</th>
+        </tr>
+
+        <tr>
+            <td class="name"> Create Water </td>
+            <td class="description">
+                Create 2 gallons/level of pure water.
+            </td>
+            <td class="school"> Conj. </td>
+            <td class="components"> V,S </td>
+            <td class="time"> 1 std. act. </td>
+            <td class="range"> Close </td>
+            <td class="aim"> Up to 2 gallons of water/level </td>
+            <td class="duration"> Instantaneous </td>
+            <td class="save"> None </td>
+            <td class="spell_resistance"> No </td>
+            <td class="page"> PH215 </td>
+        </tr>
+
+        <tr>
+            <td class="name">Cure Minor Wounds</td>
+            <td class="description">
+                Cures 1 point of damage.
+            </td>
+            <td class="school"> Conj. </td>
+            <td class="components"> V,S </td>
+            <td class="time"> 1 std. act.  </td>
+            <td class="range"> Touch </td>
+            <td class="aim"> Creature touched </td>
+            <td class="duration"> Instantaneous </td>
+            <td class="save"> Will half </td>
+            <td class="spell_resistance"> Yes </td>
+            <td class="page"> PH216 </td>
+        </tr>
+
+        <tr>
+            <!--#include file="./spells/header.html" -->
+        </tr>
+
+    </table>
+
+</body>
+
+</html>
+

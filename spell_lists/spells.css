@@ -1,0 +1,54 @@
+/* The style sheet for the spell lists. */
+body {
+    font-family: sans-serif;
+}
+
+h3 {
+    text-align: center;
+}
+
+th {
+    background-color: #999999;
+}
+
+tr:nth-child(odd) {
+    background-color: #DDDDDD;
+}
+tr:nth-child(even) {
+    background-color: #FFFFFF;
+}
+
+td.name {
+    align: "left";
+}
+td.description {
+    align: "left";
+}
+td.school {
+    align: "center";
+}
+td.components {
+    align: "center";
+}
+td.time {
+    align: "left";
+}
+td.range {
+    align: "left";
+}
+td.aim {
+    align: "left";
+}
+td.duration {
+    align: "left";
+}
+td.save {
+    align: "center";
+}
+td.spell_resistance {
+    align: "center";
+}
+td.page {
+    align: "left";
+}
+
