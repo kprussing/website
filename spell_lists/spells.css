@@ -19,36 +19,36 @@ tr:nth-child(even) {
 }
 
 td.name {
-    align: "left";
+    text-align: left;
 }
 td.description {
-    align: "left";
+    text-align: left;
 }
 td.school {
-    align: "center";
+    text-align: center;
 }
 td.components {
-    align: "center";
+    text-align: center;
 }
 td.time {
-    align: "left";
+    text-align: left;
 }
 td.range {
-    align: "left";
+    text-align: left;
 }
 td.aim {
-    align: "left";
+    text-align: left;
 }
 td.duration {
-    align: "left";
+    text-align: left;
 }
 td.save {
-    align: "center";
+    text-align: center;
 }
 td.spell_resistance {
-    align: "center";
+    text-align: center;
 }
 td.page {
-    align: "left";
+    text-align: left;
 }
 
