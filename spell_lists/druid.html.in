@@ -8,29 +8,94 @@
 
 <body>
 
-    <h3>0 Level (Orisons)</h3>
-    <table>
+    <div>
+        <table>
+            <caption><h3>0 Level (Orisons)</h3></caption>
 
-        #include spells/header.html
-        #include spells/create_water.html
+            #include spells/header.html
+            #include spells/create_water.html
+            #include spells/cure_minor_wounds.html
+            #include spells/detect_magic.html
+            #include spells/detect_poison.html
+            #include spells/flare.html
+            #include spells/guidance.html
+            #include spells/know_direction.html
+            #include spells/light.html
+            #include spells/mending.html
+            #include spells/purify_food_and_drink.html
+            #include spells/read_magic.html
+            #include spells/resistance.html
+            #include spells/virtue.html
 
-        <tr>
-            <td class="name">Cure Minor Wounds</td>
-            <td class="description">
-                Cures 1 point of damage.
-            </td>
-            <td class="school"> Conj. </td>
-            <td class="components"> V,S </td>
-            <td class="time"> 1 std. act.  </td>
-            <td class="range"> Touch </td>
-            <td class="aim"> Creature touched </td>
-            <td class="duration"> Instantaneous </td>
-            <td class="save"> Will half </td>
-            <td class="spell_resistance"> Yes </td>
-            <td class="page"> PH216 </td>
-        </tr>
+        </table>
+    </div>
 
-    </table>
+    </br>
+
+    <div>
+        <table>
+            <caption><h3>1st-Level</h3></caption>
+
+            #include spells/header.html
+            #include spells/calm_animals.html
+            #include spells/charm_animal.html
+            #include spells/cure_light_wounds.html
+            #include spells/detect_animals_or_plants.html
+            #include spells/detect_snares_and_pits.html
+            #include spells/endure_elements.html
+            #include spells/entangle.html
+            #include spells/faerie_fire.html
+            #include spells/goodberry.html
+            #include spells/hide_from_animals.html
+            #include spells/jump.html
+            #include spells/longstrider.html
+            #include spells/magic_fang.html
+            #include spells/magic_stone.html
+            #include spells/obscuring_mist.html
+            #include spells/pass_without_trace.html
+            #include spells/produce_flame.html
+            #include spells/shillelagh.html
+            #include spells/speak_with_animals.html
+            #include spells/summon_natures_ally_1.html
+
+        </table>
+    </div>
+    </br>
+
+    <div>
+        <table>
+            <caption><h3>2nd-Level</h3></caption>
+
+            #include spells/header.html
+            #include spells/animal_messenger.html
+            #include spells/animal_trance.html
+            #include spells/barkskin.html
+            #include spells/bears_endurance.html
+            #include spells/bulls_strength.html
+            #include spells/cats_grace.html
+            #include spells/chill_metal.html
+            #include spells/delay_poison.html
+            #include spells/fire_trap.html
+            #include spells/flame_blade.html
+            #include spells/flaming_sphere.html
+            #include spells/fog_cloud.html
+            #include spells/gust_of_wind.html
+            #include spells/heat_metal.html
+            #include spells/hold_animal.html
+            #include spells/owls_wisdom.html
+            #include spells/reduce_animal.html
+            #include spells/resist_energy.html
+            #include spells/restoration_lesser.html
+            #include spells/soften_earth_and_stone.html
+            #include spells/spider_climb.html
+            #include spells/summon_natures_ally_2.html
+            #include spells/summon_swarm.html
+            #include spells/tree_shape.html
+            #include spells/warp_wood.html
+            #include spells/wood_shape.html
+
+        </table>
+    </div>
 
 </body>
 
