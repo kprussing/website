@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!-- 
+Armor class data.
+-->
+<html>
+    <head>
+        <title>Armor Class</title>
+
+        <!-- Get the generic style sheet -->
+        <link rel="stylesheet" href="../charsheet.css" type="text/css">
+
+        <!-- Create section specific style -->
+        <style>
+            th {
+                text-transform: uppercase;
+                font-size: xx-small;
+            }
+            th.total {
+                font-size: x-small;
+            }
+            td {
+                text-align: center;
+                font-size: xx-small;
+                text-transform: uppercase;
+            }
+            td.rowlead {
+                text-align: right;
+                color: #FFFFFF;
+                background-color: #555555;
+            }
+            td.uline {
+                font-size: x-small;
+                border-bottom: thin solid #000000;
+            }
+
+            .big { 
+                font-size: medium;
+                text-transform: uppercase;
+            }
+        </style>
+
+    </head>
+    <body>
+
+        <table>
+            <tr>
+                <th></th>
+                <th class="total">Total</th>
+                <th></th>
+                <th>Armor</br>bonus</th>
+                <th></th>
+                <th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+
+            <tr>
+                <td class="rowlead">
+                    <span class="big">AC</span></br>Armor Class
+                </td>
+                <td class="uline">{AC}</td>
+                <td> = </td>
+                <td class="uline">{ab}</td> 
+                <td> + </td>
+                <td> + </td>
+                <td> + </td>
+                <td> + </td>
+            </tr>
+        </table>
+
+    </body>
+</html>
+

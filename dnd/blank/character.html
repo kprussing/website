@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<!--
+    We use place holders for the actual entries.  The format of the
+    place holders is taken directly from the Python string formatting
+    language.  This will allow us to write a script to simply replace
+    the values with text strings!
+-->
+<html>
+    <head>
+        <title>Character Description</title>
+
+        <!-- Get the generic style sheet -->
+        <link rel="stylesheet" href="../charsheet.css" type="text/css">
+
+        <!-- Create section specific style -->
+        <style>
+            div.bbox {
+                float: left;
+                padding: 0.5%;
+            }
+            div.uline {
+                border-bottom: thin solid #000000;
+            }
+            div.caption {
+                font-size: x-small;
+                text-transform: uppercase;
+            }
+        </style>
+
+    </head>
+    <body>
+
+        <div class="bbox" style="width: 49%;">
+            <div class="uline">
+                {name}
+            </div>
+            <div class="caption">
+                Character Name
+            </div>
+        </div>
+        <div class="bbox" style="width: 49%;">
+            <div class="uline">
+                {player}
+            </div>
+            <div class="caption">
+                Player
+            </div>
+        </div>
+        </br>
+
+        <div class="bbox" style="width: 49%;">
+            <div class="uline">
+                {class}
+            </div>
+            <div class="caption">
+                Class and Level
+            </div>
+        </div>
+        <div class="bbox" style="width: 15.66%;">
+            <div class="uline">
+                {race}
+            </div>
+            <div class="caption">
+                Race
+            </div>
+        </div>
+        <div class="bbox" style="width: 15.66%;">
+            <div class="uline">
+                {alignment}
+            </div>
+            <div class="caption">
+                Alignment
+            </div>
+        </div>
+        <div class="bbox" style="width: 15.66%;">
+            <div class="uline">
+                {deity}
+            </div>
+            <div class="caption">
+                Deity
+            </div>
+        </div>
+        </br>
+
+        <div class="bbox" style="width: 11.55%;">
+            <div class="uline">
+                {size}
+            </div>
+            <div class="caption">
+                Size
+            </div>
+        </div>
+        <div class="bbox" style="width: 11.55%;">
+            <div class="uline">
+                {age}
+            </div>
+            <div class="caption">
+                Age
+            </div>
+        </div>
+        <div class="bbox" style="width: 11.55%;">
+            <div class="uline">
+                {gender}
+            </div>
+            <div class="caption">
+                Gender
+            </div>
+        </div>
+        <div class="bbox" style="width: 11.55%;">
+            <div class="uline">
+                {height}
+            </div>
+            <div class="caption">
+                Height
+            </div>
+        </div>
+
+        <div class="bbox" style="width: 11.55%;">
+            <div class="uline">
+                {weight}
+            </div>
+            <div class="caption">
+                Weight
+            </div>
+        </div>
+        <div class="bbox" style="width: 11.55%;">
+            <div class="uline">
+                {eyes}
+            </div>
+            <div class="caption">
+                Eyes
+            </div>
+        </div>
+        <div class="bbox" style="width: 11.55%;">
+            <div class="uline">
+                {hair}
+            </div>
+            <div class="caption">
+                Hair
+            </div>
+        </div>
+        <div class="bbox" style="width: 11.55%;">
+            <div class="uline">
+                {skin}
+            </div>
+            <div class="caption">
+                Skin
+            </div>
+        </div>
+
+    </body>
+</html>
+

@@ -1,0 +1,13 @@
+/* A style sheet to help format the character sheet */
+body {
+    font-family: sans-serif;
+    font-size: medium;
+}
+
+/* 
+ * This is the flag to use small caps.  We'll want that for the skills.
+ */
+.skills {
+    font-variant: small-caps;
+}
+
