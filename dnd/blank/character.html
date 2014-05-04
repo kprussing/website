@@ -15,22 +15,113 @@
         <!-- Create section specific style -->
         <style>
             div.bbox {
-                float: left;
-                padding: 0.5%;
+                padding: 0.5em;
+                position: absolute;
             }
             div.uline {
+                font-size: 1em;
                 border-bottom: thin solid #000000;
             }
             div.caption {
-                font-size: x-small;
+                font-size: 0.1em;
                 text-transform: uppercase;
             }
+
+            /* Local IDs */
+            #name {
+                width: 23em;
+                height: 1.2em;
+                left: 0em;
+                top: 0em;
+            }
+            #player {
+                width: 23em;
+                height: 1.2em;
+                left: 24em;
+                top: 0em;
+            }
+
+            #class {
+                width: 23em;
+                height: 1.2em;
+                left: 0em;
+                top: 2em;
+            }
+            #race {
+                width: 7em;
+                height: 1.2em;
+                left: 24em;
+                top: 2em;
+            }
+            #alignment {
+                width: 7em;
+                height: 1.2em;
+                left: 32em;
+                top: 2em;
+            }
+            #deity {
+                width: 7em;
+                height: 1.2em;
+                left: 40em;
+                top: 2em;
+            }
+
+            #size {
+                width: 5em;
+                height: 1.2em;
+                left: 0em;
+                top: 4em;
+            }
+            #age {
+                width: 5em;
+                height: 1.2em;
+                left: 6em;
+                top: 4em;
+            }
+            #gender {
+                width: 5em;
+                height: 1.2em;
+                left: 12em;
+                top: 4em;
+            }
+            #height {
+                width: 5em;
+                height: 1.2em;
+                left: 18em;
+                top: 4em;
+            }
+
+            #weight {
+                width: 5em;
+                height: 1.2em;
+                left: 24em;
+                top: 4em;
+            }
+            #eyes {
+                width: 5em;
+                height: 1.2em;
+                left: 30em;
+                top: 4em;
+            }
+            #hair {
+                width: 5em;
+                height: 1.2em;
+                left: 36em;
+                top: 4em;
+            }
+            #skin {
+                width: 5em;
+                height: 1.2em;
+                left: 42em;
+                top: 4em;
+            }
+
         </style>
 
     </head>
     <body>
 
-        <div class="bbox" style="width: 49%;">
+        <div class="bbox" id="name">
             <div class="uline">
                 {name}
             </div>
@@ -38,7 +129,7 @@
                 Character Name
             </div>
         </div>
-        <div class="bbox" style="width: 49%;">
+        <div class="bbox" id="player">
             <div class="uline">
                 {player}
             </div>
@@ -48,7 +139,7 @@
         </div>
         </br>
 
-        <div class="bbox" style="width: 49%;">
+        <div class="bbox" id="class">
             <div class="uline">
                 {class}
             </div>
@@ -56,7 +147,7 @@
                 Class and Level
             </div>
         </div>
-        <div class="bbox" style="width: 15.66%;">
+        <div class="bbox" id="race">
             <div class="uline">
                 {race}
             </div>
@@ -64,7 +155,7 @@
                 Race
             </div>
         </div>
-        <div class="bbox" style="width: 15.66%;">
+        <div class="bbox" id="alignment">
             <div class="uline">
                 {alignment}
             </div>
@@ -72,7 +163,7 @@
                 Alignment
             </div>
         </div>
-        <div class="bbox" style="width: 15.66%;">
+        <div class="bbox" id="deity">
             <div class="uline">
                 {deity}
             </div>
@@ -82,7 +173,7 @@
         </div>
         </br>
 
-        <div class="bbox" style="width: 11.55%;">
+        <div class="bbox" id="size">
             <div class="uline">
                 {size}
             </div>
@@ -90,7 +181,7 @@
                 Size
             </div>
         </div>
-        <div class="bbox" style="width: 11.55%;">
+        <div class="bbox" id="age">
             <div class="uline">
                 {age}
             </div>
@@ -98,7 +189,7 @@
                 Age
             </div>
         </div>
-        <div class="bbox" style="width: 11.55%;">
+        <div class="bbox" id="gender">
             <div class="uline">
                 {gender}
             </div>
@@ -106,7 +197,7 @@
                 Gender
             </div>
         </div>
-        <div class="bbox" style="width: 11.55%;">
+        <div class="bbox" id="height">
             <div class="uline">
                 {height}
             </div>
@@ -115,7 +206,7 @@
             </div>
         </div>
 
-        <div class="bbox" style="width: 11.55%;">
+        <div class="bbox" id="weight">
             <div class="uline">
                 {weight}
             </div>
@@ -123,7 +214,7 @@
                 Weight
             </div>
         </div>
-        <div class="bbox" style="width: 11.55%;">
+        <div class="bbox" id="eyes">
             <div class="uline">
                 {eyes}
             </div>
@@ -131,7 +222,7 @@
                 Eyes
             </div>
         </div>
-        <div class="bbox" style="width: 11.55%;">
+        <div class="bbox" id="hair">
             <div class="uline">
                 {hair}
             </div>
@@ -139,7 +230,7 @@
                 Hair
             </div>
         </div>
-        <div class="bbox" style="width: 11.55%;">
+        <div class="bbox" id="skin">
             <div class="uline">
                 {skin}
             </div>

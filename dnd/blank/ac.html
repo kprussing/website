@@ -16,7 +16,7 @@ Armor class data.
                 font-size: xx-small;
             }
             th.total {
-                font-size: x-small;
+                font-size: xx-small;
             }
             td {
                 text-align: center;
@@ -32,9 +32,12 @@ Armor class data.
                 font-size: x-small;
                 border-bottom: thin solid #000000;
             }
+            td.space {
+                padding: 1em;
+            }
 
             .big { 
-                font-size: medium;
+                font-size: small;
                 text-transform: uppercase;
             }
         </style>
@@ -47,12 +50,21 @@ Armor class data.
                 <th></th>
                 <th class="total">Total</th>
                 <th></th>
+                <th></th>
+                <th></th>
                 <th>Armor</br>bonus</th>
                 <th></th>
-                <th>
+                <th>Shield</br>bonus</th>
                 <th></th>
+                <th>Dex</br>modifier</th>
                 <th></th>
+                <th>Size</br>modifier</th>
                 <th></th>
+                <th>Natural</br>armor</th>
+                <th></th>
+                <th>Deflection</br>modifier</th>
+                <th></th>
+                <th>Misc</br>Modifier</th>
             </tr>
 
             <tr>
@@ -61,11 +73,30 @@ Armor class data.
                 </td>
                 <td class="uline">{AC}</td>
                 <td> = </td>
+                <td style="font-size: small;">10</td>
+                <td> + </td>
                 <td class="uline">{ab}</td> 
                 <td> + </td>
+                <td class="uline">{sh}</td>
                 <td> + </td>
+                <td class="uline">{dexm}</td>
                 <td> + </td>
+                <td class="uline">{sz}</td>
                 <td> + </td>
+                <td class="uline">{nat}</td>
+                <td> + </td>
+                <td class="uline">{def}</td>
+                <td> + </td>
+                <td class="uline" title="{acmhow}">{acm}</td>
+                <td class="rowlead">
+                    <span class="big">Touch</span></br>Armor class
+                </td>
+                <td class="uline">{act}</td>
+                <!--<td class="space"></td>-->
+                <td class="rowlead">
+                    <span class="big">Flat-Footed</span></br>Armor class
+                </td>
+                <td class="uline">{acff}</td>
             </tr>
         </table>
 
