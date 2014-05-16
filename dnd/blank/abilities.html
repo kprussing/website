@@ -20,167 +20,382 @@
 
         <!-- Create section specific style -->
         <style>
-            th {
-                font-size: xx-small;
-                text-transform: uppercase;
+            /*th {
+                width: 5em;
             }
             td {
-                text-align: center;
-                font-size: xx-small;
-                text-transform: uppercase;
-            }
-            .small { 
-                font-size: xx-small;
-            }
-            .big { 
-                font-size: medium;
-                text-transform: uppercase;
-            }
-            td.rowlead {
-                text-align: left;
-                /*color: #FFFFFF;*/
-                /*background-color: #555555;*/
-            }
-            td.stat {
-                border-bottom: thin solid #000000;
-                font-size: x-small;
-                /*border: thin solid #000000;*/
+                width: 5em;
             }
             td.temp {
                 border: thick inset #999999;
+            }
+            */
+            td {
+                vertical-align: bottom;
+            }
+            td.caption {
+                font-size: 0.2em;
+                text-transform: uppercase;
+                vertical-align: text-top;
+            }
+            td.abox { 
+                border: thin solid #000000;
+                height: 2em;
+            }
+            td.uline {
+                border-bottom: thin solid #000000;
             }
         </style>
 
     </head>
     <body>
 
+        <div class="bbox">
+            <img src="../mark.svg" style="height: 2em; float: left">
+            <div class="header" style="padding-left: 2em;">
+                Ability Scores
+            </div>
+        </div>
+
         <table>
-            <thead>
-                <tr>
-                    <th>Ability Name</th>
-                    <th>Ability </br>Score</th>
-                    <th>Ability </br>Modifier</th>
-                    <th>Temporary </br>Score</th>
-                    <th>Temporary </br>Modifier</th>
-                </tr>
-            </thead>
-            <tbody>
 
-                <tr>
-                    <td class="rowlead">
-                        <span class="big">STR</span></br>Strength
-                    </td>
-                    <td class="stat" title="{strhow}">
-                        {str}
-                    </td>
-                    <td class="stat">
-                        {strm}
-                    </td>
-                    <td class="temp">
-                    </td>
-                    <td class="temp">
-                    </td>
-                </tr>
+            <tr>
+                <td class="rowlead">
+                    STR
+                </td>
+                <td class="uline">
+                    {str}
+                </td>
+                <td>=</td>
+                <td class="uline" title="{strbhow}">
+                    {strb}
+                </td>
+                <td>+</td>
+                <td class="uline" title="{strehow}">
+                    {stre}
+                </td>
+                <td>+</td>
+                <td class="uline" title="{strmhow}">
+                    {strm}
+                </td>
+                <td class="abox">
+                    {stm}
+                </td>
+            </tr>
 
-                <tr>
-                    <td class="rowlead">
-                        <span class="big">DEX</span></br>Dexterity
-                    </td>
-                    <td class="stat" title="{dexhow}">
-                        {dex}
-                    </td>
-                    <td class="stat">
-                        {dexm}
-                    </td>
-                    <td class="temp">
-                    </td>
-                    <td class="temp">
-                    </td>
-                </tr>
+            <tr>
+                <td class="caption">
+                    Strength
+                </td>
+                <td class="caption">
+                    Total
+                </td>
+                <td></td>
+                <td class="caption">
+                    Base Score
+                </td>
+                <td></td>
+                <td class="caption">
+                    Enhancement<br/>bonuses
+                </td>
+                <td></td>
+                <td class="caption">
+                    Misc.
+                </td>
+                <td class="caption">
+                    Strength<br/>Modifier
+                </td>
+            </tr>
 
-                <tr>
-                    <td class="rowlead">
-                        <span class="big">CON</span></br>Constitution
-                    </td>
-                    <td class="stat" title="{conhow}">
-                        {con}
-                    </td>
-                    <td class="stat">
-                        {conm}
-                    </td>
-                    <td class="temp">
-                    </td>
-                    <td class="temp">
-                    </td>
-                </tr>
+            <tr>
+                <td class="rowlead">
+                    DEX
+                </td>
+                <td class="uline">
+                    {dex}
+                </td>
+                <td>=</td>
+                <td class="uline" title="{dexbhow}">
+                    {dexb}
+                </td>
+                <td>+</td>
+                <td class="uline" title="{dexehow}">
+                    {dexe}
+                </td>
+                <td>+</td>
+                <td class="uline" title="{dexmhow}">
+                    {dexm}
+                </td>
+                <td class="abox">
+                    {dxm}
+                </td>
+            </tr>
 
-                <tr>
-                    <td class="rowlead">
-                        <span class="big">INT</span></br>Intelligence
-                    </td>
-                    <td class="stat" title="{inthow}">
-                        {int}
-                    </td>
-                    <td class="stat">
-                        {intm}
-                    </td>
-                    <td class="temp">
-                    </td>
-                    <td class="temp">
-                    </td>
-                </tr>
+            <tr>
+                <td class="caption">
+                    Dexterity
+                </td>
+                <td class="caption">
+                    Total
+                </td>
+                <td></td>
+                <td class="caption">
+                    Base Score
+                </td>
+                <td></td>
+                <td class="caption">
+                    Enhancement<br/>bonuses
+                </td>
+                <td></td>
+                <td class="caption">
+                    Misc.
+                </td>
+                <td class="caption">
+                    Dexterity<br/>Modifier
+                </td>
+            </tr>
 
-                <tr>
-                    <td class="rowlead">
-                        <span class="big">WIS</span></br>Wisdom
-                    </td>
-                    <td class="stat" title="{wishow}">
-                        {wis}
-                    </td>
-                    <td class="stat">
-                        {wism}
-                    </td>
-                    <td class="temp">
-                    </td>
-                    <td class="temp">
-                    </td>
-                </tr>
+            <tr>
+                <td class="rowlead">
+                    CON
+                </td>
+                <td class="uline">
+                    {con}
+                </td>
+                <td>=</td>
+                <td class="uline" title="{conbhow}">
+                    {conb}
+                </td>
+                <td>+</td>
+                <td class="uline" title="{conehow}">
+                    {cone}
+                </td>
+                <td>+</td>
+                <td class="uline" title="{conmhow}">
+                    {conm}
+                </td>
+                <td class="abox">
+                    {cnm}
+                </td>
+            </tr>
 
-                <tr>
-                    <td class="rowlead">
-                        <span class="big">CHA</span></br>Charisma
-                    </td>
-                    <td class="stat" title="{chahow}">
-                        {cha}
-                    </td>
-                    <td class="stat">
-                        {cham}
-                    </td>
-                    <td class="temp">
-                    </td>
-                    <td class="temp">
-                    </td>
-                </tr>
+            <tr>
+                <td class="caption">
+                    Constitution
+                </td>
+                <td class="caption">
+                    Total
+                </td>
+                <td></td>
+                <td class="caption">
+                    Base Score
+                </td>
+                <td></td>
+                <td class="caption">
+                    Enhancement<br/>bonuses
+                </td>
+                <td></td>
+                <td class="caption">
+                    Misc.
+                </td>
+                <td class="caption">
+                    Constitution<br/>Modifier
+                </td>
+            </tr>
 
-                <tr>
-                    <td class="rowlead">
-                        <span class="big">COM</span></br>Comeliness
-                    </td>
-                    <td class="stat" title="{comhow}">
-                        {com}
-                    </td>
-                    <td class="stat">
-                        {comm}
-                    </td>
-                    <td class="temp">
-                    </td>
-                    <td class="temp">
-                    </td>
-                </tr>
+            <tr>
+                <td class="rowlead">
+                    INT
+                </td>
+                <td class="uline">
+                    {int}
+                </td>
+                <td>=</td>
+                <td class="uline" title="{intbhow}">
+                    {intb}
+                </td>
+                <td>+</td>
+                <td class="uline" title="{intehow}">
+                    {inte}
+                </td>
+                <td>+</td>
+                <td class="uline" title="{intmhow}">
+                    {intm}
+                </td>
+                <td class="abox">
+                    {inm}
+                </td>
+            </tr>
 
-            </tbody>
+            <tr>
+                <td class="caption">
+                    Intelligence
+                </td>
+                <td class="caption">
+                    Total
+                </td>
+                <td></td>
+                <td class="caption">
+                    Base Score
+                </td>
+                <td></td>
+                <td class="caption">
+                    Enhancement<br/>bonuses
+                </td>
+                <td></td>
+                <td class="caption">
+                    Misc.
+                </td>
+                <td class="caption">
+                    Intelligence<br/>Modifier
+                </td>
+            </tr>
+
+            <tr>
+                <td class="rowlead">
+                    WIS
+                </td>
+                <td class="uline">
+                    {wis}
+                </td>
+                <td>=</td>
+                <td class="uline" title="{wisbhow}">
+                    {wisb}
+                </td>
+                <td>+</td>
+                <td class="uline" title="{wisehow}">
+                    {wise}
+                </td>
+                <td>+</td>
+                <td class="uline" title="{wismhow}">
+                    {wism}
+                </td>
+                <td class="abox">
+                    {wim}
+                </td>
+            </tr>
+
+            <tr>
+                <td class="caption">
+                    Wisdom
+                </td>
+                <td class="caption">
+                    Total
+                </td>
+                <td></td>
+                <td class="caption">
+                    Base Score
+                </td>
+                <td></td>
+                <td class="caption">
+                    Enhancement<br/>bonuses
+                </td>
+                <td></td>
+                <td class="caption">
+                    Misc.
+                </td>
+                <td class="caption">
+                    Wisdom<br/>Modifier
+                </td>
+            </tr>
+
+            <tr>
+                <td class="rowlead">
+                    CHA
+                </td>
+                <td class="uline">
+                    {cha}
+                </td>
+                <td>=</td>
+                <td class="uline" title="{chabhow}">
+                    {chab}
+                </td>
+                <td>+</td>
+                <td class="uline" title="{chaehow}">
+                    {chae}
+                </td>
+                <td>+</td>
+                <td class="uline" title="{chamhow}">
+                    {cham}
+                </td>
+                <td class="abox">
+                    {cam}
+                </td>
+            </tr>
+
+            <tr>
+                <td class="caption">
+                    Charisma
+                </td>
+                <td class="caption">
+                    Total
+                </td>
+                <td></td>
+                <td class="caption">
+                    Base Score
+                </td>
+                <td></td>
+                <td class="caption">
+                    Enhancement<br/>bonuses
+                </td>
+                <td></td>
+                <td class="caption">
+                    Misc.
+                </td>
+                <td class="caption">
+                    Charisma<br/>Modifier
+                </td>
+            </tr>
+
+            <tr>
+                <td class="rowlead">
+                    COM
+                </td>
+                <td class="uline">
+                    {com}
+                </td>
+                <td>=</td>
+                <td class="uline" title="{combhow}">
+                    {comb}
+                </td>
+                <td>+</td>
+                <td class="uline" title="{comehow}">
+                    {come}
+                </td>
+                <td>+</td>
+                <td class="uline" title="{commhow}">
+                    {comm}
+                </td>
+                <td class="abox">
+                    {com}
+                </td>
+            </tr>
+
+            <tr>
+                <td class="caption">
+                    Comeliness
+                </td>
+                <td class="caption">
+                    Total
+                </td>
+                <td></td>
+                <td class="caption">
+                    Base Score
+                </td>
+                <td></td>
+                <td class="caption">
+                    Enhancement<br/>bonuses
+                </td>
+                <td></td>
+                <td class="caption">
+                    Misc.
+                </td>
+                <td class="caption">
+                    Comeliness<br/>Modifier
+                </td>
+            </tr>
         </table>
-    </body>
 
+    </body>
 </html>
 

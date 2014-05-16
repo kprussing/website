@@ -11,69 +11,32 @@ Armor class data.
 
         <!-- Create section specific style -->
         <style>
-            th {
-                text-transform: uppercase;
-                font-size: xx-small;
+            div.acbox {
+                /*border: solid red 0.1em;*/
+                width: 51.5em;
+                height: 4em;
             }
-            th.total {
-                font-size: xx-small;
-            }
-            td {
-                text-align: center;
-                font-size: xx-small;
-                text-transform: uppercase;
-            }
-            td.rowlead {
-                text-align: right;
-                color: #FFFFFF;
-                background-color: #555555;
-            }
-            td.uline {
-                font-size: x-small;
-                border-bottom: thin solid #000000;
+            td.total {
+                width: 0.5em;
+                font-size: 10em;
             }
             td.space {
-                padding: 1em;
-            }
-
-            .big { 
-                font-size: small;
-                text-transform: uppercase;
+                width: 1em;
             }
         </style>
 
     </head>
     <body>
 
+        <div class="acbox">
         <table>
-            <tr>
-                <th></th>
-                <th class="total">Total</th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th>Armor</br>bonus</th>
-                <th></th>
-                <th>Shield</br>bonus</th>
-                <th></th>
-                <th>Dex</br>modifier</th>
-                <th></th>
-                <th>Size</br>modifier</th>
-                <th></th>
-                <th>Natural</br>armor</th>
-                <th></th>
-                <th>Deflection</br>modifier</th>
-                <th></th>
-                <th>Misc</br>Modifier</th>
-            </tr>
-
             <tr>
                 <td class="rowlead">
                     <span class="big">AC</span></br>Armor Class
                 </td>
-                <td class="uline">{AC}</td>
+                <td class="uline total">{AC}</td>
                 <td> = </td>
-                <td style="font-size: small;">10</td>
+                <td class="big">10</td>
                 <td> + </td>
                 <td class="uline">{ab}</td> 
                 <td> + </td>
@@ -88,18 +51,44 @@ Armor class data.
                 <td class="uline">{def}</td>
                 <td> + </td>
                 <td class="uline" title="{acmhow}">{acm}</td>
+                <td class="space"></td>
                 <td class="rowlead">
-                    <span class="big">Touch</span></br>Armor class
+                    <span class="medium">Touch</span>
+                    </br>Armor class
                 </td>
-                <td class="uline">{act}</td>
-                <!--<td class="space"></td>-->
+                <td class="uline total">{act}</td>
+                <td class="space"></td>
                 <td class="rowlead">
-                    <span class="big">Flat-Footed</span></br>Armor class
+                    <span class="medium">Flat-Footed</span>
+                    </br>Armor class
                 </td>
-                <td class="uline">{acff}</td>
+                <td class="uline total">{acff}</td>
             </tr>
+
+            <tr>
+                <td></td>
+                <th class="medium">Total</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Armor</br>bonus</td>
+                <td></td>
+                <td>Shield</br>bonus</td>
+                <td></td>
+                <td>Dex</br>modifier</td>
+                <td></td>
+                <td>Size</br>modifier</td>
+                <td></td>
+                <td>Natural</br>armor</td>
+                <td></td>
+                <td>Deflection</br>modifier</td>
+                <td></td>
+                <td>Misc</br>Modifier</td>
+            </tr>
+
         </table>
 
+        </div>
     </body>
 </html>
 

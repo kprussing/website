@@ -18,27 +18,41 @@
             }
 
             #character {
-                width: 50em;
-                height: 6.5em;
+                width: 60em;
+                height: 10em;
                 left: 0em;
                 top: 0em;
             }
+
             #abilities {
-                width: 19em;
-                height: 17em;
+                width: 27em;
+                height: 27.4em;
                 left: 0em;
-                top: 8.4em;
+                top: 10.4em;
             }
-            #ac {
-                width: 50em;
-                height: 6em;
-                left: 19.4em;
-                top: 8.4em;
+            #attacks {
+                width: 32.6em;
+                height: 27.4em;
+                left: 27.4em;
+                top: 10.4em;
+            }
+
+            #acbox {
+                width: 52em;
+                height: 5em;
+                left: 0em;
+                top: 50em;
             }
 
         </style>
     </head>
     <body>
+
+    <div style="position: absolute; left:0; top: 0; width:60em; height:100em; border: solid red 0.1em;">
+        <!-- Use a 60em wide box to hold everything.  Follow the -->
+        <!-- deluxe sheet from Wizards and make everything fit.  -->
+        <!-- Do not provide space for temporary values.  This is -->
+        <!-- for online hosting only not editing while playing.  -->
 
         <div id="character">
             <iframe src="character.html">
@@ -51,12 +65,19 @@
                 Use a real browser to see the abilities.
             </iframe>
         </div>
-        <div id="ac">
+        <div id="attacks">
+            <iframe src="attacks.html">
+                A modern browser is needed to see the attacks.
+            </iframe>
+        </div>
+
+        <div id="acbox">
             <iframe src="ac.html">
                 Use a real browser to see the AC.
             </iframe>
         </div>
 
+    </div>
     </body>
 </html>
 
