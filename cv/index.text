@@ -1,0 +1,154 @@
+Keith F. Prussing
+=================
+
+>   If only I had a big enough computer and time to play with it.
+
+Work Experience
+---------------
+
+2002-2003
+:   Stock Assistant for School Box (Tucker, GA).
+
+    Process shipment and restock shelves.  I didn't say I got a better
+    job.  I still assisted customers with finding things.  I was also
+    tapped to go and set up new locations.
+
+2002-2002
+:   Grill Operator for Waffle House (Norcross, GA).
+
+    Flipping burgers, cleaning the grill, and preparing the *mise en
+    place* for the others while looking for a real job over the course
+    of two months.
+
+2000-2001
+:   Sales Associate for Music & Arts Center (Lawrenceville, GA).
+
+    General sales monkey.  I was part of a team that increased sales by
+    20% over previous year.  I helped customers by processing instrument
+    rentals and returns, instrument and sheet music sales, and setting
+    up music lessons.
+
+1998-2000
+:   Shift Supervisor at Panera Bread (Duluth, GA).
+
+    Well, if you really want **everything** this is included.  Most
+    generally efficient employee.  Nominated for employee of the year
+    twice.  Associate trainer for store and local region.
+
+Education
+---------
+
+2012-Present
+:   PhD in Physics at Georgia Institute of Technology (Atlanta, GA) 
+
+    Currently pusuing a degree in Physics.
+
+    Title: An Investigation of Surface Shape Effects on Near-field
+    Radiative Transfer.
+
+2009-2012
+:   MS in Physics at Georgia Institute of Technology (Atlanta, GA) 
+    (not awarded).
+
+    Completed in pursuit of a PhD.
+
+2007-2009
+:   BS in Physics at Georgia Institute of Technology (Atlanta, GA).
+
+    Graduated _summa cum laude_
+
+2005-2007
+:   Kennesaw State University (Kennesaw, GA).
+
+    Preparitory classes to transfer from a music major to a physics 
+    major at Georigia Tech.
+
+2001-2004
+:   Georgia Perimeter College (Atlanta, GA).
+
+    Obligitory freshman level classes and believing I was going to
+    actually be a music major.
+
+Activities and interests
+------------------------
+
+I am a recovering professional sales man.  Oh, and I used to be a music
+major until I realized that would simply land me in the job I already
+had.  Most of my free time, I spend in the back yard with the wife and
+pups.  The little one really likes fetch!
+
+As for the stuff you really care about, my current fascinations revolve
+around computing.   I am trying to teach myself the intricacies of
+proper parallel programing.  That is slow going because I do not own a
+super-computer with which to practice.  I am also intrigued by heat
+transfer.  There is an open problem out there on how to couple the
+radiative exchange in the thermal bands to the conductive modes of
+energy exchange numerically.  I got time as an undergrad to play with a
+finite difference approach to the problem; however, the program was
+limited by the fact that it was written in the 1980s.  This means that
+the program has hard codded limits that are not trivial to modify.   The
+method is based on computing the view factors known in computer
+graphics; however, this does not mesh well with the larger node scale
+necessary for the heat transfer.  In order to account for the thermal
+shadow, we need to figure out a way to determine the power delivered to
+a surface when only a fraction of the surface participates in the
+exchange.
+
+Coupled with my thesis work, I want to investigate methods of solving
+linear systems where the matrix is a block matrix.  There has to be a
+systematic method to solve this type of system.  Specifically, I have a
+situation where the matrix is comprised of 2 by 2 block elements that
+are symmetric up to a minus sign.  There is symmetry in how the elements
+are computed.  This means that swapping the indexes of the block simply
+gets you the symmetric block of the matrix.  Currently, I am using a
+brute force method to solve the system.  I would love for the chance to
+search for a more efficient method to solve the system.
+
+Skills
+------
+
+Languages
+:   Python, Fortran, C/C++, Bash, MATLAB, German (rudimentary).
+
+Software
+:   Unix-like operating systems, Microsoft Windows, Microsoft Word,
+    Microsoft Excel, Microsoft PowerPoint, Microsoft Window, Point of
+    sale systems.
+
+Authorships
+-----------
+
+### Papers ###
+#.  K. F. Prussing and J. M. Cathcart, "Spatial distribution of
+    near-field electromagnetic flux: a numerical study of particle shape
+    effect," _Journal of nanophotonics_, (under review).
+
+### Presentations ###
+#.  "Numerical investigation of particle shape effects on the spatial
+    distribution of near-field electromagnetic flux," K. Prussing.
+    _Presentation to the 80th annual meeting of the APS southeastern
+    section_, Bowling Green, KY, 2013.  _Mary Ellen Zvanut_.
+
+### Posters ###
+#.  "Numerical investigation of particle shape effects on near-field
+    electromagnetic flux," K. Prussing.  _Poster for the 16th annual
+    directed energy symposium_, Hutsville, AL, 2014.
+
+### Conference Proceedings ###
+#.  E. M. Burdette, C. S. Nichols, S. E. Lane, K. F. Prussing, and J. M.
+    Cathcart, "Imaging FTIR emissivity measurement method," Proc. 8870,
+    2013, <http://dx.doi.org/10.117/12.2023415>.
+#.  K. Prussing, J. M. Cathcart, and B. Kocher, "Human motion analysis
+    and modeling," in Proc. SPIE 8019, 2011,
+    <http://dx.doi.org/10.1117/12.884480>.
+#.  J. M. Cathcart, K. Prussing, and B. Kocher, "Human motion analysis
+    and characterization," in Proc. SPIE 8019, 2011, 
+    <http://dx.doi.org/10.1117/12.884481>.
+#.  J. M. Cathcart, B. Kocher, K. Prussing, S. Lane, and A. Thomas,
+    "Multimodal signature modeling of humans," Proc. 7687, 2010,
+    <http://dx.doi.org/10.1117/12.850688>.
+
+-----
+
+>   <kprussing74@gmail.com> 
+
