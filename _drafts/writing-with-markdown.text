@@ -1,8 +1,3 @@
----
-layout: post
-Title: Writing with Markdown
----
-
 Writing with Markdown
 =====================
 
@@ -20,7 +15,7 @@ Installation
 
 The first order of business is to get things installed.  I'm on OS X, so
 I use [MacPorts].  To get `pandoc` we simply call
-```
+``` bash
 $ sudo port install pandoc
 ```
 According to the manual, to add a bibliography, we need
@@ -28,7 +23,7 @@ According to the manual, to add a bibliography, we need
 around on the [repository][pandoc-citeproc], it appears that this has
 been recently removed from `pandoc`.  This would explain why it is not
 evident.  So, we go directly to the Haskell method
-```
+``` bash
 $ sudo port install haskell-platform # To get cabal
 $ cabal install pandoc-citeproc
 ```
@@ -36,7 +31,7 @@ And then simply add `~/.cabal/bin` to your `PATH`.
 
 At one point, I tried to build from the cloned repository, but it
 failed.  These were the steps if you care to try it, but I just gave up.
-```
+``` bash
 $ git clone https://github.com/jgm/pandoc-citeproc
 $ cd pandoc-citeproc
 $ sudo port install haskell-platform hs-cpphs # to get cabal and cpphs
@@ -51,14 +46,20 @@ Running `pandoc`
 ----------------
 
 Now we try to make a test case
-```
+``` bash
 $ cat test.text
+```
+```
 A Title
 =======
 
 And they said stuff @narayanasway_thermal_2008.
 
+```
+``` bash
 $ cat reference.bib
+```
+```
 @article{narayanaswamy_thermal_2008,
         title = {Thermal near-field radiative transfer between two spheres},
         volume = {77},
@@ -72,6 +73,8 @@ $ cat reference.bib
         pages = {075125},
 }
 
+```
+``` bash
 $ pandoc test.text -o test.pdf --bibliography=./reference.bib --csl=physical-review-b.csl
 
 ```
@@ -87,7 +90,7 @@ for adding in the preamble if necessary.  I think we might be able to
 use the `.sty` file from the publisher, but that won't let us set the
 option.  I think the ultimate answer will be to generate the `.latex`
 and then hand hack it to set the document class correctly.
-```
+``` bash
 $ pandoc --standalone test.text -o test.latex -H preamble.tex
 $ vim test.latex # Fix the document class
 $ pdflatex test
