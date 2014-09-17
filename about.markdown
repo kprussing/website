@@ -1,7 +1,5 @@
 ---
-layout: page
-title: About
-permalink: /about/
+layout: default
 ---
 
 The Keith Page
@@ -84,10 +82,10 @@ simulation of complex urban environments.
 
 Other places
 ------------
-+   [My resumes](resumes/index.html)
-+   [D&D Spell lists](spell_lists/index.html)
-+   [D&D Character sheets](dnd/index.html)
-+   [Posts](posts/index.html)
++   [My resumes]({{ site.baseurl }}/resumes/index.html)
++   [D&D Spell lists]({{ site.baseurl }}/spell_lists/index.html)
++   [D&D Character sheets]({{ site.baseurl }}dnd/index.html)
++   [Posts](posts/{{ site.baseurl }}/index.html)
 
 >   Copyright © Keith Prussing 2014
 

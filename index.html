@@ -1,7 +1,3 @@
----
-layout: default
----
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -27,25 +23,11 @@ layout: default
 <p>I refined my vehicle dynamics model into a full rigid body model for untracked, four wheel land vehicles under normal conditions. The routine was implemented in MATLAB and hooked into a SQL database for simulation of complex urban environments.</p>
 <h2 id="other-places">Other places</h2>
 <ul>
-<li><a href="resumes/index.html">My resumes</a></li>
-<li><a href="spell_lists/index.html">D&amp;D Spell lists</a></li>
-<li><a href="dnd/index.html">D&amp;D Character sheets</a></li>
-<li><a href="posts/index.html">Posts</a></li>
+<li><a href="{{%20site.baseurl%20}}/resumes/index.html">My resumes</a></li>
+<li><a href="{{%20site.baseurl%20}}/spell_lists/index.html">D&amp;D Spell lists</a></li>
+<li><a href="{{%20site.baseurl%20}}dnd/index.html">D&amp;D Character sheets</a></li>
+<li><a href="posts/{{%20site.baseurl%20}}/index.html">Posts</a></li>
 </ul>
-<div class="posts">
-  {% for post in site.posts %}
-    <article class="post">    
-      
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
-
-      <div class="entry">
-        {{ post.content | truncatewords:40}}
-      </div>
-      
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-    </article>
-  {% endfor %}
-</div>
 <blockquote>
 <p>Copyright © Keith Prussing 2014</p>
 </blockquote>
