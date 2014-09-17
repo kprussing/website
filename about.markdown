@@ -86,8 +86,8 @@ Other places
 ------------
 +   [My resumes]({{ site.baseurl }}/resumes/index.html)
 +   [D&D Spell lists]({{ site.baseurl }}/spell_lists/index.html)
-+   [D&D Character sheets]({{ site.baseurl }}dnd/index.html)
-+   [Posts](posts/{{ site.baseurl }}/index.html)
++   [D&D Character sheets]({{ site.baseurl }}/dnd/index.html)
++   [Posts]({{ site.baseurl }}/posts//index.html)
 
 >   Copyright © Keith Prussing 2014
 
