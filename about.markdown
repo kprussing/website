@@ -79,7 +79,3 @@ untracked, four wheel land vehicles under normal conditions.  The
 routine was implemented in MATLAB and hooked into a SQL database for
 simulation of complex urban environments.
 
-Other places
-------------
-+   [Posts]({{ site.baseurl }}/posts//index.html)
-
