@@ -1,11 +1,8 @@
 ---
 layout: page
-title: About
+title: About me
 permalink: /about/
 ---
-
-The Keith Page
-==============
 
 Welcome to my web page!  This is a brief introduction to me.
 
@@ -84,8 +81,5 @@ simulation of complex urban environments.
 
 Other places
 ------------
-+   [My resumes]({{ site.baseurl }}/resumes/index.html)
 +   [Posts]({{ site.baseurl }}/posts//index.html)
-
->   Copyright © Keith Prussing 2014
 
