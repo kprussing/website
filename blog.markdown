@@ -1,5 +1,7 @@
 ---
 layout: page
+title: My Musings
+permalink: /blog/
 ---
 
 <div class="posts">
