@@ -23,26 +23,27 @@ instructions.  Apparently, we simply need to add
 to the layout.  However, I don't always want to use math, so I'll start
 with it just in this post at the top.
 
-We begin with a set of function of the independent variable \(\{x_i\}\)
-and dependent variables \(\{y_i\}\).  We then select a collection of
-functions to relate the two
-\[
+We begin with a set of function of the independent variable
+\\(\{x_i\}\\) and dependent variables \\(\{y_i\}\\).  We then select a
+collection of functions to relate the two
+\\[
     y_i = a_0 +a_1 x_i +a_2 x_i^2 +\ldots a_j \sin(x_i) = \sum_{j} a_j
     f_j(x_i).
-\]
+\\]
 Now, we minimize the squared error
-\[
+\\[
     \partial_k \frac{1}{N}\sum_{i} [y_i -\sum_{j} a_jf_j(x_i)]^2 =
     -\frac{2}{N} \sum_{i} [y_i -\sum_{j} a_jf_j(x_i)] f_k(x_i) = 0
-\]
+\\]
 or in matrix form
-\[
+\\[
     \mathbf{a} \mathbf{F} \mathbf{F}^T = \mathbf{F}^T \mathbf{y}
-\]
+\\]
 which can be readily solved.
 
 See, I now that was simple.  Now to put this online and see how the math
-looks.
+looks.  Oh, don't forget that the delimiters are `\\(`, `\\)`, `\\[`, 
+and `\\]` for math mode.
 
 [MathJax]: http://www.mathjax.org
 [sanchez_mathjax_2014]: http://gastonsanchez.com/blog/opinion/2014/02/16/Mathjax-with-jekyll.html
