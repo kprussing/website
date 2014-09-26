@@ -3,6 +3,10 @@ layout: post
 title: Least Squares Fitting
 ---
 
+<script type="text/javascrpit"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
 This note is more for myself than for anyone else.  I have derived the
 expression for the least squares fitting so many times it's not funny.
 The problem is, once I cobble together the routine to perform the
@@ -16,8 +20,8 @@ instructions.  Apparently, we simply need to add
         src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
 
-to the layout.  I really wanted to put it only in the posts that needed
-math; however, it does not appear to work if it is not in the layout.
+to the layout.  However, I don't always want to use math, so I'll start
+with it just in this post at the top.
 
 We begin with a set of function of the independent variable
 \\(\{x_i\}\\) and dependent variables \\(\{y_i\}\\).  We then select a
