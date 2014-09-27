@@ -27,7 +27,7 @@ Now for the really challenge: this straight forward method does not work
 for me.  The math regions are not being preserved after passing through
 the `kramdown` pass to do the markdown interpretation.  According to the
 MathJax [documentation], this is a common occurrence.  One
-recommendation is to use the verbatim ```` ticks, but that didn't work
+recommendation is to use the verbatim ticks, but that didn't work
 off the bat.  
 
 <!--I didn't want it to *always* be there, but trial and-->
@@ -35,7 +35,7 @@ off the bat.
 <!--`default.html` file it is.  The advantage is it will always be availa-->
 
 We begin with a set of function of the independent variable
-`\(\{x_i\}\)` and dependent variables \\(\{y_i\}\\).  We then select a
+```\(\{x_i\}\)``` and dependent variables \\(\{y_i\}\\).  We then select a
 collection of functions to relate the two
 <span>\\[
     y_i = a_0 +a_1 x_i +a_2 x_i^2 +\ldots a_j \sin(x_i) = \sum_{j} a_j
