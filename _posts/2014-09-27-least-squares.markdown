@@ -3,6 +3,10 @@ layout: post
 title: Least Squares Fitting
 ---
 
+<script type="text/javascrpit"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
 This note is more for myself than for anyone else.  I have derived the
 expression for the least squares fitting so many times it's not funny.
 The problem is, once I cobble together the routine to perform the
@@ -16,9 +20,13 @@ instructions.  Apparently, we simply need to add
         src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
 
-to the layout.  I didn't want it to *always* be there, but trial and
-error appears to tell me it *must* be in the header.  So, into the
-`default.html` file it is.
+to the layout.  However, I don't really want it in every page.  So, I
+just put it at the top of this source.  I did have to change the
+markdown field in the `_config.yml` file to use `redcarpet`.
+
+<!--I didn't want it to *always* be there, but trial and-->
+<!--error appears to tell me it *must* be in the header.  So, into the-->
+<!--`default.html` file it is.  The advantage is it will always be availa-->
 
 We begin with a set of function of the independent variable
 \\(\{x_i\}\\) and dependent variables \\(\{y_i\}\\).  We then select a
