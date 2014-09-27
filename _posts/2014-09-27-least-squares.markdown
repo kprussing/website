@@ -3,10 +3,6 @@ layout: post
 title: Least Squares Fitting
 ---
 
-<script type="text/javascrpit"
-    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-
 This note is more for myself than for anyone else.  I have derived the
 expression for the least squares fitting so many times it's not funny.
 The problem is, once I cobble together the routine to perform the
@@ -20,8 +16,9 @@ instructions.  Apparently, we simply need to add
         src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
 
-to the layout.  However, I don't always want to use math, so I'll start
-with it just in this post at the top.
+to the layout.  I didn't want it to *always* be there, but trial and
+error appears to tell me it *must* be in the header.  So, into the
+`default.html` file it is.
 
 We begin with a set of function of the independent variable
 \\(\{x_i\}\\) and dependent variables \\(\{y_i\}\\).  We then select a
@@ -41,9 +38,9 @@ or in matrix form
 \\]
 which can be readily solved.
 
-See, I now that was simple.  Now to put this online and see how the math
-looks.  Oh, don't forget that the delimiters are `\\(`, `\\)`, `\\[`, 
-and `\\]` for math mode.
+See, I told you that this was simple.  Now to put this online and see
+how the math looks.  Oh, don't forget that the delimiters are `\\(`,
+`\\)`, `\\[`, and `\\]` for math mode.
 
 [MathJax]: http://www.mathjax.org
 [sanchez_mathjax_2014]: http://gastonsanchez.com/blog/opinion/2014/02/16/Mathjax-with-jekyll.html
