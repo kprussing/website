@@ -21,15 +21,21 @@ instructions.  Apparently, we simply need to add
     </script>
 
 to the layout.  However, I don't really want it in every page.  So, I
-just put it at the top of this source.  I did have to change the
-markdown field in the `_config.yml` file to use `redcarpet`.
+just put it at the top of this source.
+
+Now for the really challenge: this straight forward method does not work
+for me.  The math regions are not being preserved after passing through
+the `kramdown` pass to do the markdown interpretation.  According to the
+MathJax [documentation], this is a common occurrence.  One
+recommendation is to use the verbatim ```` ticks, but that didn't work
+off the bat.  
 
 <!--I didn't want it to *always* be there, but trial and-->
 <!--error appears to tell me it *must* be in the header.  So, into the-->
 <!--`default.html` file it is.  The advantage is it will always be availa-->
 
 We begin with a set of function of the independent variable
-`\\(\{x_i\}\\)` and dependent variables \\(\{y_i\}\\).  We then select a
+``\\(\{x_i\}\\)`` and dependent variables \\(\{y_i\}\\).  We then select a
 collection of functions to relate the two
 \\[
     y_i = a_0 +a_1 x_i +a_2 x_i^2 +\ldots a_j \sin(x_i) = \sum_{j} a_j
@@ -52,4 +58,5 @@ how the math looks.  Oh, don't forget that the delimiters are `\\(`,
 
 [MathJax]: http://www.mathjax.org
 [sanchez_mathjax_2014]: http://gastonsanchez.com/blog/opinion/2014/02/16/Mathjax-with-jekyll.html
+[documentation]: docs.mathjax.org/en/latest/tex.html
 
