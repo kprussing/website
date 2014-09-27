@@ -35,7 +35,7 @@ off the bat.
 <!--`default.html` file it is.  The advantage is it will always be availa-->
 
 We begin with a set of function of the independent variable
-``\\(\{x_i\}\\)`` and dependent variables \\(\{y_i\}\\).  We then select a
+``\(\{x_i\}\)`` and dependent variables \\(\{y_i\}\\).  We then select a
 collection of functions to relate the two
 \\[
     y_i = a_0 +a_1 x_i +a_2 x_i^2 +\ldots a_j \sin(x_i) = \sum_{j} a_j
