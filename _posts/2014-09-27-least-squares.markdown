@@ -21,43 +21,34 @@ instructions.  Apparently, we simply need to add
     </script>
 
 to the layout.  However, I don't really want it in every page.  So, I
-just put it at the top of this source.
-
-Now for the really challenge: this straight forward method does not work
-for me.  The math regions are not being preserved after passing through
-the `kramdown` pass to do the markdown interpretation.  According to the
-MathJax [documentation], this is a common occurrence.  One
-recommendation is to use the verbatim ticks, but that didn't work
-off the bat.  And I bet it would have been good to learn how to spell.
-I wrote `javascrpit` not `javascript`.
-
-<!--I didn't want it to *always* be there, but trial and-->
-<!--error appears to tell me it *must* be in the header.  So, into the-->
-<!--`default.html` file it is.  The advantage is it will always be availa-->
+just put it at the top of this source.  Oh while I'm at it, make sure
+you spell `javascript` right.  If you don't you could spend a few hours
+wondering what went wrong like I did when I spelled it `javascrpit`.
 
 We begin with a set of function of the independent variable
-```\(\{x_i\}\)``` and dependent variables \\(\{y_i\}\\).  We then select a
+\(\{x_i\}\) and dependent variables \\(\{y_i\}\\).  We then select a
 collection of functions to relate the two
-<span>\\[
+\\[
     y_i = a_0 +a_1 x_i +a_2 x_i^2 +\ldots a_j \sin(x_i) = \sum_{j} a_j
     f_j(x_i).
-\\]</span>
+\\]
 Now, we minimize the squared error
-$$
+\\[
     \partial_k \frac{1}{N}\sum_{i} [y_i -\sum_{j} a_jf_j(x_i)]^2 =
     -\frac{2}{N} \sum_{i} [y_i -\sum_{j} a_jf_j(x_i)] f_k(x_i) = 0
-$$
+\\]
 or in matrix form
 \\[
     \mathbf{a} \mathbf{F} \mathbf{F}^T = \mathbf{F}^T \mathbf{y}
 \\]
-which can be readily solved.
+which can be readily solved for the coefficients \\(\{a_j\}\\).
 
 See, I told you that this was simple.  Now to put this online and see
 how the math looks.  Oh, don't forget that the delimiters are `\\(`,
-`\\)`, `\\[`, and `\\]` for math mode.
+`\\)`, `\\[`, and `\\]` for math mode so that the `\\` character is
+escaped.  And the `$$ ... $$` mode appears to work as in line math with
+`kramdown`.
 
 [MathJax]: http://www.mathjax.org
 [sanchez_mathjax_2014]: http://gastonsanchez.com/blog/opinion/2014/02/16/Mathjax-with-jekyll.html
-[documentation]: docs.mathjax.org/en/latest/tex.html
 
