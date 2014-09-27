@@ -3,7 +3,7 @@ layout: post
 title: Least Squares Fitting
 ---
 
-<script type="text/javascrpit"
+<script type="text/javascript"
     src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 
@@ -16,7 +16,7 @@ website.  This post also gives me a chance to try out [MathJax].  After
 a Google search, I came across [these][sanchez_mathjax_2014]
 instructions.  Apparently, we simply need to add
 
-    <script type="text/javascrpit"
+    <script type="text/javascript"
         src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
 
@@ -28,7 +28,8 @@ for me.  The math regions are not being preserved after passing through
 the `kramdown` pass to do the markdown interpretation.  According to the
 MathJax [documentation], this is a common occurrence.  One
 recommendation is to use the verbatim ticks, but that didn't work
-off the bat.  
+off the bat.  And I bet it would have been good to learn how to spell.
+I wrote `javascrpit` not `javascript`.
 
 <!--I didn't want it to *always* be there, but trial and-->
 <!--error appears to tell me it *must* be in the header.  So, into the-->
