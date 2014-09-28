@@ -26,18 +26,16 @@ you spell `javascript` right.  If you don't you could spend a few hours
 wondering what went wrong like I did when I spelled it `javascrpit`.
 
 We begin with a set of function of the independent variable
-\\(\{x_i\}\\) and dependent variables \\(\{y_i\}\\).  We then select a
-collection of functions to relate the two
+\\(\\{x_i\\}\\) and dependent variables \\(\\{y_i\\}\\).  We then select
+a collection of functions to relate the two
 \\[
-    y_i = a_0 +a_1 x_i +a_2 x_i^2 +\ldots +a_j \sin(x_i) 
-\\]
-\\[
-    y_i = \sum_j a_j f_j(x_i)
+    y_i = a_0 +a_1 x_i +a_2 x_i^2 +\ldots +a_j \sin(x_i) =\sum_j
+    a_j\,f_j(x_i).
 \\]
 Now, we minimize the squared error
 \\[
-    \partial_k \frac{1}{N}\sum_{i} \[y_i -\sum_{j} a_jf_j(x_i)]^2 =
-    -\frac{2}{N} \sum_{i} [y_i -\sum_{j} a_jf_j(x_i)] f_k(x_i) = 0
+    \partial_k \frac{1}{N}\sum_i \[y_i -\sum_j a_jf_j(x_i)]^2 =
+    -\frac{2}{N} \sum_i [y_i -\sum_j a_jf_j(x_i)] f_k(x_i) = 0
 \\]
 or in matrix form
 \\[
@@ -46,10 +44,16 @@ or in matrix form
 which can be readily solved for the coefficients \\(\{a_j\}\\).
 
 See, I told you that this was simple.  Now to put this online and see
-how the math looks.  Oh, don't forget that the delimiters are `\\(`,
-`\\)`, `\\[`, and `\\]` for math mode so that the `\\` character is
-escaped.  And the `$$ ... $$` mode appears to work as in line math with
-`kramdown`.
+how the math looks.
+
+A few pointers:
+
+*   You must escape the backslashes in entering the math mode `\\( …
+    \\)` and `\\[ … \\]`.
+*   The dollar sign version `$$ … $$` appears to work as inline math
+    with `kramdown`.
+*   The `\sum_j` construct with no limits on the sum does *not* like
+    with the index is inside `{}` unless you escape the backslash.
 
 [MathJax]: http://www.mathjax.org
 [sanchez_mathjax_2014]: http://gastonsanchez.com/blog/opinion/2014/02/16/Mathjax-with-jekyll.html
