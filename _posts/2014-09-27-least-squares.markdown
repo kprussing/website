@@ -39,7 +39,7 @@ Now, we minimize the squared error
 \\]
 or in matrix form
 \\[
-    \mathbf{a} \mathbf{F} \mathbf{F}^T = \mathbf{F}^T \mathbf{y}
+    \mathbf{a} \mathbf{F} \mathbf{F}^T = \mathbf{y} \mathbf{F}^T 
 \\]
 which can be readily solved for the coefficients \\(\\{a_j\\}\\).
 
