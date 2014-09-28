@@ -29,12 +29,14 @@ We begin with a set of function of the independent variable
 \\(\{x_i\}\\) and dependent variables \\(\{y_i\}\\).  We then select a
 collection of functions to relate the two
 \\[
-    y_i = a_0 +a_1 x_i +a_2 x_i^2 +\ldots a_j \sin(x_i) = \sum_{j} a_j
-    f_j(x_i)
+    y_i = a_0 +a_1 x_i +a_2 x_i^2 +\ldots +a_j \sin(x_i) 
+\\]
+\\[
+    y_i = \sum_{j} a_j f_j(x_i)
 \\]
 Now, we minimize the squared error
 \\[
-    \partial_k \frac{1}{N}\sum_{i} [y_i -\sum_{j} a_jf_j(x_i)]^2 =
+    \partial_k \frac{1}{N}\sum_{i} \[y_i -\sum_{j} a_jf_j(x_i)]^2 =
     -\frac{2}{N} \sum_{i} [y_i -\sum_{j} a_jf_j(x_i)] f_k(x_i) = 0
 \\]
 or in matrix form
