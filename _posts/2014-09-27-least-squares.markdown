@@ -41,7 +41,7 @@ or in matrix form
 \\[
     \mathbf{a} \mathbf{F} \mathbf{F}^T = \mathbf{F}^T \mathbf{y}
 \\]
-which can be readily solved for the coefficients \\(\{a_j\}\\).
+which can be readily solved for the coefficients \\(\\{a_j\\}\\).
 
 See, I told you that this was simple.  Now to put this online and see
 how the math looks.
