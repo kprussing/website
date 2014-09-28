@@ -34,8 +34,9 @@ a collection of functions to relate the two
 \\]
 Now, we minimize the squared error
 \\[
-    \partial_k \frac{1}{N}\sum_i \[y_i -\sum_j a_jf_j(x_i)]^2 =
-    -\frac{2}{N} \sum_i [y_i -\sum_j a_jf_j(x_i)] f_k(x_i) = 0
+    \frac{\partial}{\partial a_k} \frac{1}{N}\sum_i \[y_i -\sum_j
+    a_j\,f_j(x_i)]^2 = -\frac{2}{N} \sum_i [y_i -\sum_j a_j\,f_j(x_i)]
+    f_k(x_i) = 0
 \\]
 or in matrix form
 \\[
