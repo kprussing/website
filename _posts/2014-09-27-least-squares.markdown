@@ -54,7 +54,8 @@ A few pointers:
 *   The dollar sign version `$$ … $$` appears to work as inline math
     with `kramdown`.
 *   The `\sum_j` construct with no limits on the sum does *not* like
-    with the index is inside `{}` unless you escape the backslash.
+    with the index is inside `{}` unless you escape with a backslash
+    (maybe.  I didn't actually test that).
 
 [MathJax]: http://www.mathjax.org
 [sanchez_mathjax_2014]: http://gastonsanchez.com/blog/opinion/2014/02/16/Mathjax-with-jekyll.html
