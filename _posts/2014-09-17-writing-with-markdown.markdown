@@ -149,7 +149,7 @@ bad characters
 The first line above is easy to over look.  I was banging my head
 against the wall for a while until I got it right.  I went through a lot
 of effort to get a binary version or a dictionary.  That
-`personal_ws-1.1 en 0' indicates that this is a personal word list for
+`personal_ws-1.1 en 0` indicates that this is a personal word list for
 the English language dictionary and the number just needs to be there.
 According to the `info` page, it is supposed to be the number of words,
 but even the documentation says the value does not matter.  Don't miss
