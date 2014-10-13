@@ -96,7 +96,7 @@ work by getting the application file even though it is supposedly not
 necessary.  Finally, in the future just use `adb backup`.  The advantage
 of all of this was I got to learn more about the Android backup files
 and discovered two new command line tools that hadn't crossed my radar
-yet `pax` and `star`.
+yet: `pax` and `star`.
 
 [amslimfordy_how_2013]: http://www.angrybirdsnest.com/how-to-back-up-angry-birds-progress-on-android-rooted-and-non-rooted/#backup-new
 [abe]: http://sourceforge.net/projects/adbextractor/
