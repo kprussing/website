@@ -98,6 +98,69 @@ of all of this was I got to learn more about the Android backup files
 and discovered two new command line tools that hadn't crossed my radar
 yet: `pax` and `star`.
 
+EDIT 2014-11-22: While in the process of cleaning up my computer to do a
+clean install of Yosemite, I came across one other script I used to pull
+data off of my old Android phones.  As I already discussed above, this
+really a pointless script now.  However, I don't want to just throw it
+out and lose my notes.  I also don't want to create a repository just
+for it, and I don't want it in my `dotfiles`.  So, I'll just put it
+here.
+
+    $ cat phonebu
+    #!/bin/bash
+
+    # We will also need to pull the apks to finish backing up the apps.
+    # This can be accomplished by using get_apk and simply pulling the
+    # apk. The ones to look out for are the ones on the sdcard (under 
+    # /mnt/asec) as these will be pulled simply to a pkg.apk. We will 
+    # need to make sure we know which one we are pulling using
+    #
+    #   adb pull ${apk}
+    #
+    # We could simply use sed to remove the -#/pkg portion of the apk in
+    # the data from packages (downloaded_apps). Actually, looking at the
+    # results, we may only need to remove the '/pkg' portion as the 
+    # other apks appear to also contain the -# tag.
+    #
+    # We then need to look into what other bits of information we need
+    # to pull from the phone.
+
+    # Create the base directory to store the data
+    basedir=backup_$(date +%F)
+    mkdir -p ${basedir}
+
+    # Make the directory for the apk
+    mkdir -p ${basedir}/apks
+
+    # Find the downloaded applications excluding the Google ones.
+    apps=$( \
+            adb shell pm list packages -f | \
+            awk '{RS="\r";}  \
+            (/data/ || /asec/) && !/\.android\./ \
+            {sub(/package:/, ""); print $1}'  \
+        )
+
+    for app in ${apps}; do
+        # Get the install and the folder
+        apk=$(echo ${app} | awk -F= '{print $1}')
+        fld=$(echo ${app} | awk -F= '{print $2}')
+
+        # Make the data folder
+        mkdir -p ${basedir}/${fld}
+
+        # Copy the application data
+        adb pull /data/data/${fld} ${basedir}/${fld}
+
+        # Determine the local name for the apk.
+        local_apk=$( \
+                echo ${apk} | sed -e 's|\/pkg||' \
+                -e 's|\/[a-zA-Z]*\/[a-zA-Z]*\/||' \
+            )
+
+        # Pull the apk
+        adb pull ${apk} ${basedir}/apks/${local_apk}
+
+
 [amslimfordy_how_2013]: http://www.angrybirdsnest.com/how-to-back-up-angry-birds-progress-on-android-rooted-and-non-rooted/#backup-new
 [abe]: http://sourceforge.net/projects/adbextractor/
 [abedev]: https://github.com/nelenkov/android-backup-extractor
