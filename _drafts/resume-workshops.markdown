@@ -114,3 +114,5 @@ Network, network, network…  Keep an idea about how much I'd want to
 make.  Update my voice mail.  Add comments about using `git` and `svn`.
 Make sure to talk about team work done with group on urban scene.
 
+Edit 2014-11-28:
+This is simply a check to see if I can edit on <GitHub.com> directly.
