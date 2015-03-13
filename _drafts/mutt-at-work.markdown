@@ -32,5 +32,7 @@ install `contacts`
 Now, we need to sync the Exchange server with the local address book.
 This is done by opening Outlook and going to Outlook -> Preferences ->
 Sync Services -> Contacts and checking the appropriate Exchange server
-(Gatech in my case)
+(Gatech in my case).  Actually, no.  That las part is wrong.  The guide
+I saw was very old and reading the comments told me that it just doesn't
+work any more.
 
