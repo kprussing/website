@@ -32,7 +32,7 @@ problems.  I will also be attempting to keep the code recognizable and
 avoid clever tricks like list comprehensions in the physics parts.  It's
 not that I don't know them (I do), I'm just trying to keep to the
 basics.  Anything to do with display or I/O is fair game though.  The
-code will be hosted in a [mercurial repository on Bitbucket](repo).  Why
+code will be hosted in a [mercurial repository on Bitbucket][repo].  Why
 Bitbucket and mercurial you ask?  Because it's Python.
 
 And now for a final note before I get started.  If you are an
@@ -89,3 +89,4 @@ References
     Upper Saddle River, NJ, 2006), Ed. 2.
 
 [repo]: https://bitbucket.org/kprussing/compphys
+
