@@ -90,7 +90,18 @@ but I suspect that is due to a nice multiple of 10.
 
 ### Problem 3
 
-Now we get to something non-trivial.
+Now we get to something non-trivial.  Implementing the Euler method is
+straight forward.  At some point, I will probably need to write a canned
+routine to perform the Euler method, but that seems to be touching on
+the area I want to avoid.  We'll see.  But now results.  Plotting for a
+selection of \\(b\\), we see that the terminal velocity is being reached
+as expected.  A bit of manipulation reveals that terminal velocity is
+when \\(v_t = a / b\\) which is what we are seeing.  Beyond that, there
+isn't really much more to say.  I know we'll come back to this in the
+next chapter.
+
+![Numeric and exact solution for chapter 1 problem 3]({{ site.url
+}}/images/compphys/compphys_chapter1_problem3.svg)
 
 References
 ----------
