@@ -53,14 +53,12 @@ Not much to see here.  It is pretty trivial to see that the solution is
 \\(v(t) = v(0) - g t\\).  Each time step is similarly simple \\(t_i = i
 \\Delta t\\).  Computing over a selection of time steps, we find
 
-![Numeric and exact solution for chapter 1 problem 1]({{ site.url
-}}/images/compphys/compphys_chapter1_problem1a.svg)
+![Numeric and exact solution for chapter 1 problem 1]({{ site.url }}/images/compphys/compphys_chapter1_problem1a.svg)
 
 Well, that's not very interesting.  It is good to know that we can get a
 good answer for this case, but what about the error?  
 
-![Error in the solution for chapter 1 problem 1]({{ site.url
-}}/images/compphys/compphys_chapter1_problem1b.svg)
+![Error in the solution for chapter 1 problem 1]({{ site.url }}/images/compphys/compphys_chapter1_problem1b.svg)
 
 Now, that's more interesting.  What are the final results?  I'm glad you
 asked:
@@ -100,8 +98,7 @@ when \\(v_t = a / b\\) which is what we are seeing.  Beyond that, there
 isn't really much more to say.  I know we'll come back to this in the
 next chapter.
 
-![Numeric and exact solution for chapter 1 problem 3]({{ site.url
-}}/images/compphys/compphys_chapter1_problem3.svg)
+![Numeric and exact solution for chapter 1 problem 3]({{ site.url }}/images/compphys/compphys_chapter1_problem3.svg)
 
 References
 ----------
