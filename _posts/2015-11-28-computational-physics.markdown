@@ -7,9 +7,6 @@ title: Playing with Computational Physics
     src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 
-Introduction
-============
-
 At some point during the process of working through my dissertation, I
 got so bogged down in the process of *doing* the work, I forgot a bit
 *why* I was so intrigued when I started.  I was going through the
@@ -43,15 +40,14 @@ undergraduate using this text, go do your homework before looking over
 my solutions.  It's good for you and actually quite fun.
 
 Chapter 1
-=========
+---------
 
 And so it begins.  This will probably be a very short section because
 the problems are very simple.  The chapter is simply a chance to whet
 the appetite and brush up on some basics.  It will also give me a chance
 to build some basic plotting tools for later.
 
-Problem 1
----------
+### Problem 1
 
 Not much to see here.  It is pretty trivial to see that the solution is
 \\(v(t) = v(0) - g t\\).  Each time step is similarly simple \\(t_i = i
@@ -87,7 +83,7 @@ that you can use to reduce the error, but they use fancy array slicing
 which I am avoiding.
 
 References
-==========
+----------
 
 1.  N. J. Giordano and H. Nakanishi, *Computational Physics* (Pearson,
     Upper Saddle River, NJ, 2006), Ed. 2.
