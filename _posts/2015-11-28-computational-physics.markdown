@@ -100,6 +100,97 @@ next chapter.
 
 ![Numeric and exact solution for chapter 1 problem 3]({{ site.url }}/images/compphys/compphys_chapter1_problem3.svg)
 
+### Problem 4
+
+And now we get to the first “challenging” problem.  Coding up the
+numerical solution is straight forward.  The real challenge is in
+finding the analytic solution, and I must say, I have been out of
+ordinary differential equations for so long that it stumped me.  My
+first attempt was guess and check.  That failed horribly.  Then, I
+attempted to use a power series expansion.  That also failed.  The
+correct method was to use a trial function.
+
+We begin with the set of equations
+\\begin{align}
+    \\frac{dN_a}{du} &= -N_A \\\\\\\\
+    \\frac{dN_b}{du} &= N_A - \\frac{\\tau_A}{\\tau_B}N_B
+\\end{align}
+where \\(u = t / \\tau_A\\) and we define \\(R \\equiv \\tau_A /
+\\tau_B\\).  The solution to the first equation is trivial
+\\begin{equation}
+    N_A = N_A(0)e^{-u}.
+\\end{equation}
+The second equation is the trickier part.  First, move \\(N_B\\) to the
+left hand side and multiply by \\(e^{Ru}\\)
+\\begin{align}
+    e^{Ru}\\frac{dN_B}{du} + (Re^{Ru})N_B &= N_A(0)e^{(R-1)u}
+    \\\\\\\\ 
+    \\frac{d}{du}\\left( e^{Ru} N_B\\right) &= \\frac{d}{du} 
+    \\left( \\frac{N_A(0)e^{(R-1)u}}{R-1} \\right)
+\\end{align}
+(Quick aside: apparently, both Jekyll and MathJax strip a backslash.
+Meaning, to get that line break above I had to use `\\\\\\\\`.)
+Integrating both sides we find
+\\begin{equation}
+    e^{Ru} N_B(u) = \\frac{N_A(0)}{R-1} e^{(R-1)u} + C.
+\\end{equation}
+Now, if we have a population \\(N_B(0)\\) at time \\(u=0\\), we can
+solve for \\(C\\) to find \\(C = N_B(0) - \\frac{N_A(0)}{R-1}\\).
+Putting it all together, we find
+\\begin{align}
+    N_A(t) &= N_A(0) e^{-t/\\tau_A}
+    \\\\\\\\
+    N_B(t) &= \\frac{N_A(0)}{R-1}\\left(
+        e^{-t/\\tau_A} - e^{-t/\\tau_B}
+    \\right) + N_B(0) e^{-t/\\tau_B}
+\\end{align}
+
+But wait, there's more!  We clearly see a special case when \\(\\tau_A =
+\\tau_b\\).  Then \\(R=1\\) the solution is a bit different.  In this
+case, we have
+\\begin{align}
+    \\frac{dN_B}{du} &= N_A(0)e^{-u} - N_B
+    \\\\\\\\
+    \\rightarrow e^u \\frac{dN_B}{du} + e^u N_B & = N_A(0)
+    \\\\\\\\
+    \\rightarrow \frac{d}{du}\\left(e^uN_B\\right) &= N_A(0)
+    \\\\\\\\
+    \\rightarrow N_B(u) &= \\left[N_A(0)u + C\\right]e^{-u}.
+\\end{align}
+Plugging in the stated initial conditions we have
+\\begin{equation}
+    N_B(u) = \\left[N_A(0) u + N_B(0)\\right] e^{-u}.
+\\end{equation}
+
+Now we get to see what happens.  Below, I present a batch of plots.  In
+each cell, the top figure plots the numeric and exact results for
+\\(N_A(u)\\) and \\(N_B(u)\\) with \\(u=t/\\tau_A\\).  The bottom plot
+in each cell is the error at each time step.  All figure share a common
+X-axis and each row shares a Y-axis.  From left to right, we are
+reducing the time step and increasing the number of iterations in the
+simulation.  Going down the column, we are increasing the ratio of the
+time constants \\(R\\equiv \\tau_A/\\tau_B\\).
+
+![Numerical and exact solutions for chapter 1 problem 4]({{ site.url }}/images/compphys/chapter1_problem4a.png)
+
+The first thing that jumps out to me is that the error is fairly stable
+with respect to \\(R\\).  It does increase with a larger time constant
+ratio, but it is not as large as one might expect.  We see that using a
+time step of \\(\\Delta u = 0.001\\) yields fairly accurate results for
+all cases.  We could increase the accuracy by increasing the number of
+iterations, but I got impatient and killed the calculation.  We have
+more interesting things to do!
+
+Generally speaking, we see that the population \\(N_B\\) has a form
+similar to the Planck blackbody curve.  A quick glance at the equations
+does not really reveal an specific relation.  I suspect that this is
+just a random occurrence.  Many equations in physics that bear a
+superficial similarity.  We also see that when \\(N_A\\) decays faster
+than \\(N_B\\), we get a strong surge in the population of \\(N_B\\).
+This is true when both decay at the same rate as well.  I'm sure as I
+stare at this figure some more, I will come up with other things to say.
+But for now, I'm calling it quits.
+
 References
 ----------
 
