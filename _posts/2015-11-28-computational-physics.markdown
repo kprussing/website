@@ -8,7 +8,7 @@ title: Playing with Computational Physics
 </script>
 
 Introduction
-------------
+============
 
 At some point during the process of working through my dissertation, I
 got so bogged down in the process of *doing* the work, I forgot a bit
@@ -31,23 +31,63 @@ starting at the beginning.  I will periodically post a selection of the
 discussion of the solutions here, but some problems are trivial and
 don't merit much in the way of discussion.  I will be working with
 Python primarily, but I may dust of my Fortran skills for some of the
-problems.  The code will be hosted in a [mercurial repository on
-Bitbucket](repo).  Why Bitbucket and mercurial you ask?  Because it's
-Python.
+problems.  I will also be attempting to keep the code recognizable and
+avoid clever tricks like list comprehensions in the physics parts.  It's
+not that I don't know them (I do), I'm just trying to keep to the
+basics.  Anything to do with display or I/O is fair game though.  The
+code will be hosted in a [mercurial repository on Bitbucket](repo).  Why
+Bitbucket and mercurial you ask?  Because it's Python.
 
 And now for a final note before I get started.  If you are an
 undergraduate using this text, go do your homework before looking over
 my solutions.  It's good for you and actually quite fun.
 
 Chapter 1
----------
+=========
 
 And so it begins.  This will probably be a very short section because
 the problems are very simple.  The chapter is simply a chance to whet
-the appetite and brush up on some basics.
+the appetite and brush up on some basics.  It will also give me a chance
+to build some basic plotting tools for later.
+
+Problem 1
+---------
+
+Not much to see here.  It is pretty trivial to see that the solution is
+\\(v(t) = v(0) - g t\\).  Each time step is similarly simple \\(t_i = i
+\\Delta t\\).  Computing over a selection of time steps, we find
+
+![Numeric and exact solution for chapter 1 problem 1]({{ site.url
+}}/images/compphys/compphys_chapter1_problem1a.svg)
+
+Well, that's not very interesting.  It is good to know that we can get a
+good answer for this case, but what about the error?  
+
+![Error in the solution for chapter 1 problem 1]({{ site.url
+}}/images/compphys/compphys_chapter1_problem1b.svg)
+
+Now, that's more interesting.  What are the final results?  I'm glad you
+asked:
+
+    Numeric, exact, difference
+    -98.000000, -98.000000, -7.95808e-13
+    -98.000000, -98.000000, -2.70006e-13
+    -98.000000, -98.000000, 4.26326e-14
+    -98.000000, -98.000000, 2.84217e-14
+    -98.000000, -98.000000, -1.42109e-14
+    -98.000000, -98.000000, 0
+
+We clearly see that *increasing* the time step *decreases* the error.
+This is contrary to the common result where decreasing the time step
+increases the accuracy.  What's going on here?  The answer is
+accumulated error due to machine precision.  At each time step, we are
+accumulating a fractional error.  As we take more steps from the start
+to the finish, we are simply adding up all that error.  Tricks exist
+that you can use to reduce the error, but they use fancy array slicing
+which I am avoiding.
 
 References
-----------
+==========
 
 1.  N. J. Giordano and H. Nakanishi, *Computational Physics* (Pearson,
     Upper Saddle River, NJ, 2006), Ed. 2.
