@@ -82,6 +82,16 @@ to the finish, we are simply adding up all that error.  Tricks exist
 that you can use to reduce the error, but they use fancy array slicing
 which I am avoiding.
 
+### Problem 2
+
+Not much to see here, unless you didn't do problem 1.  Then it's the
+exact same as above but with an opposite sign.  The accuracy is better,
+but I suspect that is due to a nice multiple of 10.
+
+### Problem 3
+
+Now we get to something non-trivial.
+
 References
 ----------
 
