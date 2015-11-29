@@ -189,7 +189,11 @@ superficial similarity.  We also see that when \\(N_A\\) decays faster
 than \\(N_B\\), we get a strong surge in the population of \\(N_B\\).
 This is true when both decay at the same rate as well.  I'm sure as I
 stare at this figure some more, I will come up with other things to say.
-But for now, I'm calling it quits.
+But for now, I'm calling it quits.  Oh, and for estimating the short and
+long term behavior, after looking at the graphs it's trivially easy.
+There is a power law increase in \\(N_B\\) and power law decrease in
+\\(N_A\\) at the early times followed by an exponential decay at long
+times.
 
 References
 ----------
