@@ -291,6 +291,33 @@ ratio \\(R\\).  We do see that the numerical value of the derivative
 goes to zero as expected.  Unfortunately, this problem only gave me an
 exercise in debugging and creating plots.  Time to move on.
 
+### Problem 6
+
+And now on to the final problem of the chapter.  First off, performing
+the exercise of error analysis using the \\(b=0\\) case is pointless.
+It is simply exponential growth, and we did that analysis for problems 1
+and 2.  Now for a figure:
+
+![Numerical and exact solutions for chapter 1 problem 6]({{ site.url }}/images/compphys/chapter1_problem6.png)
+
+Looking at this, we see that the long term behavior of the population is
+to converge to the value \\(N=a/b\\).  This can be verified as the
+expected behavior from the outset by setting the derivative to 0 and
+solving for the population.  To further the analogy to a population, we
+see that the population will grow until it maximizes the resources
+available.  At that point, the population cannot sustain additional
+growth without losing members.  On the other hand, if the population
+exceeds its resources, the limited supply will force members out until
+the resources can sustain the remaining population.
+
+Conclusion
+----------
+
+With that said, we have reached the end of chapter 1.  Looking at this
+post, I see that it got rather long.  To that end, I will start by
+breaking the chapters into individual posts.  At some point in the near
+future, I will get to work on chapter 2.
+
 References
 ----------
 
