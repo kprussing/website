@@ -195,6 +195,102 @@ There is a power law increase in \\(N_B\\) and power law decrease in
 \\(N_A\\) at the early times followed by an exponential decay at long
 times.
 
+### Problem 5
+
+And on to the next challenging problem.  First and foremost, we don't
+need to go for the simplicity stated in the problem.  We can keep our
+solution general and play around with the ratio of time constants.  The
+first thing we need to do is recast the problem to remove the units.  To
+do this, we introduce the ratio of time constant \\(R=\\tau_A/\\tau_B\\)
+as in the previous problem.  This in turn transforms our problem int the
+set of equations
+\\begin{align}
+    f'(u) &= -f(u) + Rg(u) \\\\\\\\
+    g'(u) &=  f(u) - Rg(u)
+\\end{align}
+where \\(f\\) is the population of A and \\(g\\) is the population of B.
+This is mainly to save me some typing.  Now we can turn this system of
+equations over to a mathematician and get an answer!
+
+Now for a brief aside about removing the units.  In the above equation,
+we are working with a scaled time parameter \\(u=t/\\tau_A\\) and the
+time constant ratio \\(R\\).  One thing my first quantum mechanics
+professor pointed out is that you *always* want to work with unitless
+variables.  The scale factors you find turn out to be very important in
+determining relative properties of the problem.  He mentioned this while
+we were studying the simple harmonic oscillator system.  There, the
+solution can be studied in a general sense simply with \\(x_0\\) and
+\\(p_0\\).  The net result is the units are where the physics exists.
+
+Before we get to the numeric solution, we can actually find an analytic
+solution to these equations.  We don't really need it for the problem,
+but it is good to evaluate the error in out solution.  Also, it gives me
+a chance to brush up on my differential equations.  First, we write
+\\(f\\) in terms of \\(g\\) and take the derivative
+\\begin{align}
+    f &= g' + Rg 
+    \\\\\\\\
+    f' &= g'' + Rg' &= Rg - (g' + Rg)
+    \\\\\\\\
+    \\rightarrow 0 &= g'' + (R+1)g'.
+\\end{align}
+Now we introduce our proposed solution \\(g = e^{mu}\\) and plug it in.
+This gives us the equation
+\\begin{equation}
+    m(m + R + 1) = 0
+\\end{equation}
+with the solutions \\(m=0\\) and \\(m=-R-1\\).  Taking a linear
+combination of the two solutions we find
+\\begin{align}
+    g(u) & = C_1 e^{-(R+1)u} + C_2
+    \\\\\\\\
+    g'(u) &= -C_1(R+1)e^{-(R+1)u}.
+\\end{align}
+Now, if we take \\(f(0) = A\\) and \\(g(0) = B\\), we can plug these in
+to find
+\\begin{align}
+    g(u) &= \\frac{A - RB}{R+1} \\left(1 - e^{-(R+1)u}\\right) + B
+    \\\\\\\\
+    f(u) &= \\frac{A - RB}{R+1} \\left(R + e^{-(R+1)u}\\right) + RB.
+\\end{align}
+(The algebra isn't that hard if you really want to work through it.)
+Adding these two solutions readily shows that the population at any time
+is \\(f+g = A+B\\) as expected.  Additionally, we can see the long term
+behavior should be
+\\begin{align}
+    \\lim_{u\\to\\infty} f(u) & = \\frac{R}{R+1}(A + B)
+    \\\\\\\\
+    \\lim_{u\\to\\infty} g(u) & = \\frac{1}{R+1}(A + B).
+\\end{align}
+So, if the time constants are equal, we get equal populations in both
+states.  On the other hand, if population A decays slower than B (\\(R >
+1\\)), we will have a larger population is A than B.  We have no real
+reason to consider the case where A decays faster than B because we can
+simply get that by swapping the two states.  Now that we have the theory
+and math done, let's write some code.
+
+Well, that took longer than it should have.  The main reason was I was
+trying to generate a figure with the number of steps I was using for the
+number of rows and not the number of populations.  Lesson: Always make
+sure you're using the correct parameters.  Stupid mistake…
+
+On to the show!  First, we consider when the ratio of the time constants
+is the same \\(R=1\\).  Playing around with the number of steps, I found
+10000 to work just fine.  The error is proportional to the number of
+steps.  Doubling the number of steps used halves the error.  Below, I
+present the population, derivative of the population, and the error in
+each column.
+
+![Numerical and exact solutions for chapter 1 problem 5]({{ site.url }}/images/compphys/chapter1_problem5a.png)
+
+Looking at this, we see that the result is boring.  The two states decay
+into a state where they are exchanging member equally.  Normally, I
+would propose looking at the others, but the result is the same.  Those
+systems just end at a different population distribution governed by the
+ratio \\(R\\).  We do see that the numerical value of the derivative
+goes to zero as expected.  Unfortunately, this problem only gave me an
+exercise in debugging and creating plots.  Time to move on.
+
 References
 ----------
 

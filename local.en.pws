@@ -1,4 +1,4 @@
-personal_ws-1.1 en 48 
+personal_ws-1.1 en 52 
 Authorships
 DiSC
 compphys
@@ -10,6 +10,7 @@ Euphonium
 repo
 Lawrenceville
 Burdette
+unitless
 Kutta
 nanophotonics
 PMSA
@@ -36,6 +37,7 @@ Prussing
 Nakanishi
 Norcross
 MySQL
+Rg
 Runge
 blackbody
 LaTeX
@@ -44,6 +46,8 @@ SPIE
 src
 laude
 situ
+lim
 radiative
 SQL
 Fourier's
+infty
