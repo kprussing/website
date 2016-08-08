@@ -17,5 +17,14 @@ target to
 
 Then, place the short cut in the start up directory.
 
+Edit: Desktop Environment
+-------------------------
+
+To use a desktop environment, follow [these notes][these].  KDE appears
+to work out of the box.  The Gnome and Mate desktops are not working
+yet.  It appears like the Gnome session looks in `/home/userid/` instead
+of `$HOME`.  I'm still looking though.
+
 [see]: http://x.cygwin.com/docs/ug/setup.html
+[these]: http://x.cygwin.com/docs/ug/using.html
 
