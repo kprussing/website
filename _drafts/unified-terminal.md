@@ -20,6 +20,10 @@ Python and Pandoc and MikTex and ...) set [MSYS2_PATH_TYPE=inherit].  I
 still haven't found how to change the default shell without
 [editing](shell) `msys2_shell.cmd`.
 
+Well, I just realized we need CygWin anyway.  It has an X server.
+Combine that with offlineimap and mutt simply work, and that points to
+the idea that we should just use MSys as a useable terminal.
+
 [var]: https://github.com/msys2/msys2.github.io/issues/20
 [shell]: http://superuser.com/questions/961699/change-default-shell-on-msys2
 
