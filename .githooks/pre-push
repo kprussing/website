@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# Build the resume and add it if it has changed
+
+resume=resumes/full.html
+rm -f $resume
+scons -C resumes || exit 1
+if ! git diff --quiet $resume
+then
+    git add $resume || exit 2
+    git commit -m"Automatically built resume" || exit 3
+fi
+exit 0
