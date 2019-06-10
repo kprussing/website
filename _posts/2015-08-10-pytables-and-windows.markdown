@@ -9,6 +9,9 @@ not others, I found out that it had nothing to do with ViTables.  So,
 I'll just put it here. These are primarily the notes I wrote while
 digging into the problem.
 
+**tl;dr**: Your Python installation on Windows is stupid and needs to be
+reinstalled.
+
 <!--break-->
 
 Running Notes
@@ -110,7 +113,4 @@ A real solution is to just install a version of Python that stashes the
 DLLs somewhere in the modules can find.  Most likely, this will be one
 that installs the libraries into the `site-package/tables` directory
 just like WinPython does.
-
-**tl;dr**: Your Python installation on Windows is stupid and needs to be
-reinstalled.
 
