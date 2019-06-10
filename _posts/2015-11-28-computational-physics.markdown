@@ -3,10 +3,6 @@ layout: post
 title: Playing with Computational Physics
 ---
 
-<script type="text/javascript"
-    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-
 At some point during the process of working through my dissertation, I
 got so bogged down in the process of *doing* the work, I forgot a bit
 *why* I was so intrigued when I started.  I was going through the
@@ -14,6 +10,12 @@ motions, but not really finding the fun of physics.  Sure, programming
 is fun in and of itself, but I was missing the physics.  So, now that I
 have free time to pursue a hobby, I want to go back and remind myself
 why I started down this path.
+
+<!--break-->
+
+<script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
 So, where to go?  I am one of those people who value a good book.  And I
 do mean a physical book.  I bought and kept all of my text books

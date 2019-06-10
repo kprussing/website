@@ -11,6 +11,7 @@ Recently, I learned about [pandoc] and that let me give up on HTML by
 using [Markdown], but I still wrote my scientific papers directly with
 LaTeX.  Now I think it is time to make the full switch.
 
+<!--break-->
 Writing with Markdown
 ---------------------
 

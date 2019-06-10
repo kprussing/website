@@ -6,8 +6,11 @@ title: Dumping a Subversion Repository
 After finishing my thesis work, I wanted to grab the revision history
 for both the software I developed and the writing of my dissertation.
 It was (is?) stored in a subversion server owned by the lab; however, I
-want all of that for my own purposes.  First, I had to dump from a
-remote server
+want all of that for my own purposes.
+
+<!--break-->
+
+First, I had to dump from a remote server
 
     $ svnrdump https://url/to/repo > repo_full.svndump
 

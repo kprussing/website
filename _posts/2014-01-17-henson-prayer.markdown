@@ -5,6 +5,7 @@ title: The Henson Prayer
 
 (To be read in the voice of Kermit (or your favorite Muppet))
 
+<!--break-->
 
 |                   Our creator, who art in heaven,
 |                         Muppets be thy name,

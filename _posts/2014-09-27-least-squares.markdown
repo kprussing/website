@@ -3,16 +3,20 @@ layout: post
 title: Least Squares Fitting
 ---
 
-<script type="text/javascript"
-    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-
 This note is more for myself than for anyone else.  I have derived the
 expression for the least squares fitting so many times it's not funny.
 The problem is, once I cobble together the routine to perform the
 fitting, I completely forget how to do it again.  I hope, this will
 prevent me from having to do it ever again if only because it is on my
-website.  This post also gives me a chance to try out [MathJax].  After
+website.
+
+<!--break-->
+
+<script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+This post also gives me a chance to try out [MathJax].  After
 a Google search, I came across [these][sanchez_mathjax_2014]
 instructions.  Apparently, we simply need to add
 

@@ -9,6 +9,8 @@ off.  Luckily, I was able to fiddle with it enough to grab the
 `highscores.lua` and `settings.lua` files from her Angry Birds games
 using a little script I wrote some time back.
 
+<!--break-->
+
     $ cat pullab
     #!/bin/bash
     abs=$( adb shell pm list packages | \
@@ -97,6 +99,8 @@ necessary.  Finally, in the future just use `adb backup`.  The advantage
 of all of this was I got to learn more about the Android backup files
 and discovered two new command line tools that hadn't crossed my radar
 yet: `pax` and `star`.
+
+---
 
 EDIT 2014-11-22: While in the process of cleaning up my computer to do a
 clean install of Yosemite, I came across one other script I used to pull

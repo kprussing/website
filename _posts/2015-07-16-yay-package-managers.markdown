@@ -4,7 +4,11 @@ title: Yay Package Managers...
 ---
 
 So, today I log into one of my RHEL6 machines and notice that `yum` says
-there are some updates to apply.  Trying to do a simple update gives
+there are some updates to apply.
+
+<!--break-->
+
+Trying to do a simple update gives
 
     $ yum upgrade
      <snip>

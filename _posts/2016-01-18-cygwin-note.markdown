@@ -17,6 +17,8 @@ target to
 
 Then, place the short cut in the start up directory.
 
+<!--break-->
+
 Edit: Desktop Environment
 -------------------------
 
