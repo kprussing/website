@@ -3,3 +3,5 @@ resumes/publications/*.html
 resumes/publications/unsorted.*
 Gemfile.lock
 _site
+short-courses.md
+short-courses.tex
