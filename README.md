@@ -1,16 +1,10 @@
-This is a collection of a simple website for myself.  We'll see how
-things progress with it.  The Jekyll formatting is "forked" from [Jekyll
-Now](https://github.com/barryclark/jekyll-now) and is a hodge podge of
-changes.  Ultimately, I was doing the formatting myself, and then I
-found that project to try.  Merging the important parts in has been
-interesting.
+The Keith Page
+==============
 
-# Resumes
+This is simply the source of my website.
 
-My full resume should be automatically built using a `git pre-push`
-hook.  The hook is in .githooks and I need to run
+## Licence
 
-    git config core.hooksPath .githooks
-
-after cloning the repo.
-
+Unless otherwise noted, the text of this sight is licensed under the
+Creative Commons Attribution Attribution 4.0 License and any software is
+under the BSD 2 clause license.
