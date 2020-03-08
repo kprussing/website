@@ -1,3 +1,13 @@
+---
+layout: post
+title: Getting GLX Working with X Forwarding
+---
+
+Some notes on how to get indirect rendering working with X forwarding on
+an ssh connection.
+
+<!--break-->
+
 I finally figured out how to get the GLX working with XQuartz and the
 Red Hat machines.  It ultimately boils down to enabling the indirect GLX which is
 no longer enabled by default for most X systems.  For XQuartz, it's a

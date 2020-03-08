@@ -1,5 +1,14 @@
-Unified Command Line in Windows
-===============================
+---
+layout: post
+title: Unified Command Line in Windows
+---
+
+Some working notes on getting a unified terminal experience on Windows.
+The ultimate problem is every tool set for Windows wants to install a
+complete GNU environment and doesn't bother checking if you already have
+one installed.  The ultimate kicker is: you basically can't do it.
+
+<!--break-->
 
 Have you ever tried to install some command line tool for Windows and
 noticed that every single one wants to install a full MinGW tool chain?

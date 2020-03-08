@@ -1,8 +1,12 @@
-Note on writing a GCC plugin
-============================
+---
+layout: post
+title: Notes on writing a GCC plugin
+---
 
 Here are notes on some of my discoveries while working on a plugin for
 GCC.
+
+<!--break-->
 
 Callback arguments
 ------------------
