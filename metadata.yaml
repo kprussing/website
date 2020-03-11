@@ -1,0 +1,17 @@
+---
+author: Keith F Prussing, Ph.D.
+description: Computational Physicist in Atlanta, GA
+avatar: https://avatars.githubusercontent.com/kprussing
+footer-links:
+  email: kprussing74@gmail.com
+  github: kprussing
+  linkedin: kprussing
+  rss:
+  stackoverflow: 4923114
+url: http://kprussing.github.io
+
+css:
+  - static/meyer-reset.css
+  - static/style.css
+#panflute-verbose: True
+...
