@@ -1,13 +1,1 @@
-resumes/publications/*.md
-resumes/publications/*.html
-resumes/publications/unsorted.*
 Gemfile.lock
-_site
-short-courses.md
-short-courses.tex
-professional-activities.md
-professional-activities.tex
-on-campus-committees.md
-on-campus-committees.tex
-key-delivered-products.md
-key-delivered-products.tex
