@@ -10,7 +10,7 @@ PANDOCFLAGS = [
 
 env = Environment(ENV=os.environ, PDFLATEX="lualatex",
                   tools=["default", "pandoc", "inkscape"],
-                  prefix="#doc",
+                  prefix="#docs",
                   PANDOCFLAGS=" ".join(PANDOCFLAGS))
 
 base = env.Clone()
