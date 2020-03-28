@@ -1,7 +1,5 @@
 ---
-layout: page
 title: Spell Lists
-permalink: /spell_lists/
 ---
 
 
@@ -19,6 +17,6 @@ and send me a pull request.
 
 [sandbox]: http://github.com/kprussing/mysandbox
 
-*   [Druid]({{ site.baseurl }}/spell_lists/druid.html)
-*   [Ranger]({{ site.baseurl }}/spell_lists/ranger.html)
+*   [Druid](spell_lists/druid.html)
+*   [Ranger](spell_lists/ranger.html)
 

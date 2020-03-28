@@ -1,0 +1,25 @@
+#!/usr/bin/env python
+
+import os
+
+Import("env prefix")
+
+prefix = os.path.join(prefix, Dir(os.curdir).name)
+for src in ("index.md",
+            ):
+    root, _ = os.path.splitext(src)
+    env.Pandoc(os.path.join(prefix, root + ".html"), src)
+
+for src in ("charsheet.css",
+            "mark.svg",
+            os.path.join("blank", "abilities.html"),
+            os.path.join("blank", "ac.html"),
+            os.path.join("blank", "attacks.html"),
+            os.path.join("blank", "blank.html"),
+            os.path.join("blank", "character.html"),
+            os.path.join("blank", "index.html"),
+            os.path.join("blank", "misc1.html"),
+            os.path.join("blank", "misc2.html"),
+           ):
+    env.Install(os.path.join(prefix, Dir(os.curdir).name), src)
+
