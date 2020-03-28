@@ -1,0 +1,9 @@
+#!/usr/bin/env python
+
+
+icons = [File(i) for i in ("email.svg",
+                           "github.svg",
+                           "linkedin.svg",
+                           "rss.svg",
+                           "stackoverflow.svg")]
+Return("icons")

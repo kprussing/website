@@ -10,9 +10,14 @@ PANDOCFLAGS = [
 
 env = Environment(ENV=os.environ, PDFLATEX="lualatex",
                   tools=["default", "pandoc", "inkscape"],
+                  prefix="doc",
                   PANDOCFLAGS=" ".join(PANDOCFLAGS))
 
 base = env.Clone()
+styles, icons = SConscript(os.path.join("static", "SConscript"),
+                           exports={"env" : base})
+for s in styles + icons:
+    base.Install(os.path.join(env["prefix"], os.path.dirname(s.path)), s)
 
 base.AppendUnique(PANDOCFLAGS=" ".join(["",
                                         "--standalone",
@@ -22,5 +27,5 @@ for src in ("about.markdown",
             "fun.markdown",
             "index.markdown"):
     root, _ = os.path.splitext(src)
-    base.Pandoc(root + ".html", src)
+    base.Pandoc(os.path.join(env["prefix"], root + ".html"), src)
 

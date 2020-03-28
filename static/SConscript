@@ -1,0 +1,13 @@
+#!/usr/bin/env python
+
+import os
+
+Import("env")
+
+styles = [File(s) for s in ("meyer-reset.css",
+                            "style.css")]
+icons = SConscript(os.path.join("svg-icons", "SConscript"),
+                   exports={"env" : env})
+
+Return("styles icons")
+
