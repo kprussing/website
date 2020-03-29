@@ -1,0 +1,23 @@
+#!/usr/bin/env python
+
+import os
+Import("env prefix")
+
+prefix = os.path.join(prefix, Dir(os.curdir).name)
+# At the moment, we have to copy the files to the install location
+# because the Pandoc scanner does not properly search the resource-path.
+# Once I fix that, I can stop duplicating files.
+for src in ("chapter1_problem4a.png",
+            "chapter1_problem5a.png",
+            "chapter1_problem6.png",
+            "compphys_chapter1_problem1a.svg",
+            "compphys_chapter1_problem1b.svg",
+            "compphys_chapter1_problem3.svg",
+            ):
+    env.Install(prefix, src)
+
+_ = env.Clone()
+_.Append(PANDOCFLAGS=" --mathjax --resource-path=.:" + Dir(prefix).path)
+_.Pandoc(os.path.join(prefix, "index.html"), "index.md")
+
+

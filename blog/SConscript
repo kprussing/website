@@ -28,8 +28,12 @@ for src in ("2014-01-17-henson-prayer.markdown",
 math = env.Clone()
 math.Append(PANDOCFLAGS=" --mathjax")
 for src in ("2014-09-27-least-squares.markdown",
-            # "2015-11-28-computational-physics.markdown",
             ):
     root, _ = os.path.splitext(src)
     math.Pandoc(os.path.join(prefix, root + ".html"), src)
+
+Export("env prefix")
+for subdir in ("2015-11-28-computational-physics",
+               ):
+    SConscript(os.path.join(subdir, "SConscript"))
 
