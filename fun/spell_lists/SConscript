@@ -13,5 +13,5 @@ for src in ("index.md",
 for src in ("druid.html",
             "ranger.html",
             "spells.css"):
-    env.Install(os.path.join(prefix, Dir(os.curdir).name), src)
+    env.Install(prefix, src)
 

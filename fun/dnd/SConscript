@@ -21,5 +21,6 @@ for src in ("charsheet.css",
             os.path.join("blank", "misc1.html"),
             os.path.join("blank", "misc2.html"),
            ):
-    env.Install(os.path.join(prefix, Dir(os.curdir).name), src)
+    dirname, basename = os.path.split(src)
+    env.Install(os.path.join(prefix, dirname), src)
 

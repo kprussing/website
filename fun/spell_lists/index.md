@@ -17,6 +17,6 @@ and send me a pull request.
 
 [sandbox]: http://github.com/kprussing/mysandbox
 
-*   [Druid](spell_lists/druid.html)
-*   [Ranger](spell_lists/ranger.html)
+*   [Druid](druid.html)
+*   [Ranger](ranger.html)
 
