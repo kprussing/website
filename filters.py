@@ -51,13 +51,17 @@ def masthead(doc):
     metadata = doc.get_metadata()
     url = metadata.get("url", "")
     nav = "<a href='{0}/{1}'>{2}</a>"
+    author = doc.get_metadata("author")
+    if isinstance(author, (list, tuple)):
+        author = author[0]
+
     masthead = [ "",
         "<div class='wrapper-masthead'>",
         "\t<div class='container'>",
         "\t\t<header class='masthead clearfix'>",
         "\t\t\t" + avatar.format(url, metadata.get("avatar", "")),
         "\t\t\t<div class='site-info'>",
-        "\t\t\t\t" + name.format(url, metadata.get("author", "")),
+        "\t\t\t\t" + name.format(url, author),
         "\t\t\t\t" + desc.format(metadata.get("description", "")),
         "\t\t\t</div>",
         "\t\t\t<nav>",
@@ -65,7 +69,7 @@ def masthead(doc):
         "\t\t\t" + nav.format(url, "website/about.html", "About"),
         "\t\t\t" + nav.format(url, "website/blog.html", "Blog"),
         "\t\t\t" + nav.format(url, "website/fun/index.html", "Fun"),
-        "\t\t\t" + nav.format(url, "resume.html", "Resume"),
+        "\t\t\t" + nav.format(url, "resume/index.html", "Resume"),
         "\t\t\t</nav>",
         "\t\t</header>",
         "\t</div>",
@@ -96,6 +100,9 @@ def footer(doc):
     # panflute.debug(logos)
     year = datetime.date.today().year
     author = doc.get_metadata("author")
+    if isinstance(author, (list, tuple)):
+        author = author[0]
+
     # Build up the footer for each page to include the logos and the
     # copy right notice.
     footer = "\n" \
@@ -118,11 +125,36 @@ def footer(doc):
                 *doc.get_metadata("include-after", ()),
                 panflute.RawBlock(footer, format="html"))
 
+def format_post(doc):
+    """Do some formatting for posts
+
+    We want the author list to be formatted in a single span in the
+    text, but as individuals in the meta data.  So, we migrate the
+    author list to the meta field if it does not exist and we just joint
+    the authors into a single string.  However, we only do this for HTML
+    output with the `post` field set to True.
+    """
+    if doc.format != "html" or not doc.get_metadata("post", False):
+        return
+
+    author = doc.get_metadata("author")
+    if "author-meta" not in doc.metadata:
+        doc.metadata["author-meta"] = author
+
+    if isinstance(author, list):
+        if len(author) == 1:
+            doc.metadata["author"] = author[0]
+        elif len(author) == 2:
+            doc.metadata["author"] = " and ".join(author)
+        else:
+            doc.metadata["author"] = ", ".join(author[:-1]) \
+                    + ", and " + author[-1]
 
 def finalize(doc):
     """Run the finalization steps"""
     for f in (masthead,
               footer,
+              format_post,
              ):
         f(doc)
 

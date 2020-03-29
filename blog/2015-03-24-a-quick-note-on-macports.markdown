@@ -1,18 +1,18 @@
 ---
-layout: post
 title: A Quick Note on Installing Old Ports
+date: 2015-03-24
+author: Keith F. Prussing
+abstract: >
+    So, I recently discovered that something is wrong with [Inkscape]
+    0.91 available from MacPorts.  When I attempt to convert a SVG to
+    PDF+LaTeX, it doesn't work.  At first blush, it appears like a macro
+    is not properly closed with a `}` character; however, I have not had
+    a chance to create a minimum working example to reproduce this
+    behavior.  The problem is I _need_ this to work for my dissertation.
+    Trying the development port didn't help because the `lualatex` was
+    claiming that a page was missing.
+post: true
 ---
-
-So, I recently discovered that something is wrong with [Inkscape] 0.91
-available from MacPorts.  When I attempt to convert a SVG to PDF+LaTeX,
-it doesn't work.  At first blush, it appears like a macro is not
-properly closed with a `}` character; however, I have not had a chance
-to create a minimum working example to reproduce this behavior.  The
-problem is I _need_ this to work for my dissertation.  Trying the
-development port didn't help because the `lualatex` was claiming that
-a page was missing.
-
-<!--break-->
 
 After a Google search, I found [these instructions] which failed because
 `port` was claiming that it could not find the patches.  To work around

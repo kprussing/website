@@ -1,18 +1,18 @@
 ---
-layout: post
 title: Getting PyTables to Play Nice with Windows
+date: 2015-08-10
+author: Keith F. Prussing, Ph.D.
+abstract: >
+    I originally started this as a wiki page on my fork of ViTables.
+    After trying to understand why ViTables would crash on some Windows
+    boxes but not others, I found out that it had nothing to do with
+    ViTables.  So, I'll just put it here. These are primarily the notes
+    I wrote while digging into the problem.
+
+    **tl;dr**: Your Python installation on Windows is stupid and needs
+    to be reinstalled.
+post: true
 ---
-
-I originally started this as a wiki page on my fork of ViTables.  After
-trying to understand why ViTables would crash on some Windows boxes but
-not others, I found out that it had nothing to do with ViTables.  So,
-I'll just put it here. These are primarily the notes I wrote while
-digging into the problem.
-
-**tl;dr**: Your Python installation on Windows is stupid and needs to be
-reinstalled.
-
-<!--break-->
 
 Running Notes
 -------------

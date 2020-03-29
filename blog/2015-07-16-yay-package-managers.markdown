@@ -1,12 +1,12 @@
 ---
-layout: post
 title: Yay Package Managers...
+date: 2015-07-16
+author: Keith F. Prussing, Ph.D.
+abstract: >
+    So, today I log into one of my RHEL6 machines and notice that `yum`
+    says there are some updates to apply.
+post: true
 ---
-
-So, today I log into one of my RHEL6 machines and notice that `yum` says
-there are some updates to apply.
-
-<!--break-->
 
 Trying to do a simple update gives
 
@@ -38,7 +38,7 @@ Trying to do a simple update gives
 
 Okay?  Trying a Google search didn't bring anything useful up for a
 while.  At this point, I'm ready to start banging my head on the desk.
-And the, I came across [this thread].  It turns out `gnote` wanted an
+And then, I came across [this thread].  It turns out `gnote` wanted an
 old version of `boost`.  The catch is, I don't use `gnote`.  I normally
 `ssh` in and use the terminal for everything.  When I _do_ sit down at
 the workstation, I prefer KDE.  I have no use for `gnote` so it can just
@@ -46,7 +46,7 @@ go away.  Following the instructions I ran
 
     $ rpm -qa | grep -e "boost-.*-1\.41\.0.*" | xargs rpm --test -e
 
-to check which programs wanted the specific version of boost and 
+to check which programs wanted the specific version of boost and
 
     $ yum remove gnote-0.6.3-3.el6.x86_64
 

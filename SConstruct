@@ -21,13 +21,14 @@ for s in styles + icons:
 
 base.AppendUnique(PANDOCFLAGS=" ".join(["",
                                         "--self-contained",
-                                        "--to", "html+raw_attribute"]))
+                                        "--to", "html"]))
 for src in ("about.markdown",
             "index.markdown"):
     root, _ = os.path.splitext(src)
     base.Pandoc(os.path.join(env["prefix"], root + ".html"), src)
 
-for subdir in ("fun",
+for subdir in ("blog",
+               "fun",
                ):
     SConscript(os.path.join(subdir, "SConscript"),
                exports={"env" : base})

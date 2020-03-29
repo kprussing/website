@@ -1,14 +1,14 @@
 ---
-layout: post
 title: Dumping a Subversion Repository
+date: 2015-05-13
+author: Keith F. Prussing, Ph.D.
+abstract: >
+    After finishing my thesis work, I wanted to grab the revision
+    history for both the software I developed and the writing of my
+    dissertation.  It was (is?) stored in a subversion server owned by
+    the lab; however, I want all of that for my own purposes.
+post: true
 ---
-
-After finishing my thesis work, I wanted to grab the revision history
-for both the software I developed and the writing of my dissertation.
-It was (is?) stored in a subversion server owned by the lab; however, I
-want all of that for my own purposes.
-
-<!--break-->
 
 First, I had to dump from a remote server
 

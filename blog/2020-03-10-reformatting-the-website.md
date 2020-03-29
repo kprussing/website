@@ -1,8 +1,8 @@
 ---
 title: Reformatting my Website
-author: Keith F Prussing
+author: Keith F. Prussing, Ph.D.
 date: 2020-03-10
-abstract: |
+abstract: >
   I recently decided I wanted to update my website with a new post.  But
   the post I wanted to write was too complicated to keep in a single
   post.  That's when I discovered that Jekyll isn't quite up to the task
@@ -111,19 +111,30 @@ using relied heavily on SASS which I didn't know about.  A little more
 study will allow me to unravel that dependency and give me a chance to
 customize the output more.
 
+The final challenge we getting GitHub to properly display the pages.  I
+attempted to use the `.nojekyll` trick that's listed on the web do
+disable Jekyll, then the pages wouldn't host from my main folder.  The
+second attempt was to build into Jekyll's `_site` directory, but that
+didn't work either.  It turns out that GitHub's _personal_ pages must be
+processed by Jekyll.  (Apparently, I closed the website where I found
+that nugget of information, but [this answer] has some information.  You
+can also see it when you compare enabling Jekyll on a personal page
+verses a project page).  My solution was to just move my website to a
+new repository and host it like a project.  I already did this with my
+resume and it works like a charm.
+
 # Conclusions
 
 So here we are.  I have migrated to using Pandoc and SCons to generate
 the website.  Pandoc allows me to embed additional metadata into the
 posts and potentially look into generating PDF versions from a common
 source while SCons allows me to add additional build logic to keep my
-sources clean.  All of the changes I attempted are archived in the [git
-repository][] for the website under branches.  They may have some useful
-tips for those interested, but they are more likely to keep me from
-redoing the initial setup in the future.  The only other steps are to
-add a hook to build the website locally when pushing, add the `nojekyll`
-file to keep Jekyll from trying to rebuild on GitHub's server, and then
-get back to writing.
+sources clean.  All of the changes I attempted are archived in the
+[original git repository][] for the website under branches.  They may
+have some useful tips for those interested, but they are more likely to
+keep me from redoing the initial setup in the future.  The only other
+steps are to add a hook to build the website locally when pushing and
+then get back to writing.
 
 [Bison and flex]: link to the post
 [listings]: https://ctan.org/pkg/listings?lang=en
@@ -135,4 +146,5 @@ get back to writing.
 [Asciidoctor]: http://asciidoctor.org/
 [Sphinx]: https://sphinx-doc.org
 [tool]: https://github.com/kprussing/scons-pandoc
-[git repository]: http://github.com/kprussing/kprussing.github.io
+[original git repository]: http://github.com/kprussing/kprussing.github.io
+[this answer]: https://stackoverflow.com/a/27666206/4249913

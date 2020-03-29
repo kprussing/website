@@ -1,0 +1,35 @@
+#!/usr/bin/env python
+
+import os
+
+Import("env")
+
+prefix = os.path.join(env["prefix"], Dir(os.curdir).name)
+
+for src in ("2014-01-17-henson-prayer.markdown",
+            "2014-09-17-Hello-World.markdown",
+            "2014-09-17-writing-with-markdown.markdown",
+            "2014-10-12-salvaging-game-data-on-android.markdown",
+            "2015-03-24-a-quick-note-on-macports.markdown",
+            "2015-05-13-dumping-svn-repo.markdown",
+            "2015-07-16-yay-package-managers.markdown",
+            "2015-08-10-pytables-and-windows.markdown",
+            "2015-08-24-debug-pyqt-application.markdown",
+            "2016-01-18-cygwin-note.markdown",
+            "2016-06-05-glx-and-xquartz.md",
+            "2017-01-19-unified-terminal.md",
+            "2018-01-18-gcc-plugin-notes.md",
+            "2020-03-10-reformatting-the-website.md",
+            ):
+    root, _ = os.path.splitext(src)
+    env.Pandoc(os.path.join(prefix, root + ".html"), src)
+
+# Process the files that need to support math.
+math = env.Clone()
+math.Append(PANDOCFLAGS=" --mathjax")
+for src in ("2014-09-27-least-squares.markdown",
+            # "2015-11-28-computational-physics.markdown",
+            ):
+    root, _ = os.path.splitext(src)
+    math.Pandoc(os.path.join(prefix, root + ".html"), src)
+

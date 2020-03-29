@@ -1,21 +1,17 @@
 ---
-layout: post
 title: Playing with Computational Physics
+date: 2015-11-28
+author: Keith F. Prussing, Ph.D.
+abstract: >
+    At some point during the process of working through my dissertation,
+    I got so bogged down in the process of *doing* the work, I forgot a
+    bit *why* I was so intrigued when I started.  I was going through
+    the motions, but not really finding the fun of physics.  Sure,
+    programming is fun in and of itself, but I was missing the physics.
+    So, now that I have free time to pursue a hobby, I want to go back
+    and remind myself why I started down this path.
+post: true
 ---
-
-At some point during the process of working through my dissertation, I
-got so bogged down in the process of *doing* the work, I forgot a bit
-*why* I was so intrigued when I started.  I was going through the
-motions, but not really finding the fun of physics.  Sure, programming
-is fun in and of itself, but I was missing the physics.  So, now that I
-have free time to pursue a hobby, I want to go back and remind myself
-why I started down this path.
-
-<!--break-->
-
-<script type="text/javascript"
-    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
 
 So, where to go?  I am one of those people who value a good book.  And I
 do mean a physical book.  I bought and kept all of my text books
@@ -58,7 +54,7 @@ Not much to see here.  It is pretty trivial to see that the solution is
 ![Numeric and exact solution for chapter 1 problem 1]({{ site.url }}/images/compphys/compphys_chapter1_problem1a.svg)
 
 Well, that's not very interesting.  It is good to know that we can get a
-good answer for this case, but what about the error?  
+good answer for this case, but what about the error?
 
 ![Error in the solution for chapter 1 problem 1]({{ site.url }}/images/compphys/compphys_chapter1_problem1b.svg)
 

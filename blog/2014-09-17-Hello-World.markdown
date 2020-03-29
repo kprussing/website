@@ -1,6 +1,11 @@
 ---
-layout: post
 title: You're up and running!
+date: 2014-09-17
+author: Keith F. Prussing
+abstract: >
+    These are my initial notes on getting up and running with Jekyll.
+    It's very outdated now.
+post: true
 ---
 
 Hello, World!

@@ -1,15 +1,15 @@
 ---
-layout: post
 title: Salvaging Game Data on Android
+date: 2014-10-12
+author: Keith F. Prussing
+abstract: >
+    A few weeks ago, the wife's Samsung Galaxy S2 took the final plunge
+    and bit the dust (mostly).  It wound up caught in a cycle of
+    powering on and off.  Luckily, I was able to fiddle with it enough
+    to grab the `highscores.lua` and `settings.lua` files from her Angry
+    Birds games using a little script I wrote some time back.
+post: true
 ---
-
-A few weeks ago, the wife's Samsung Galaxy S2 took the final plunge and
-bit the dust (mostly).  It wound up caught in a cycle of powering on and
-off.  Luckily, I was able to fiddle with it enough to grab the
-`highscores.lua` and `settings.lua` files from her Angry Birds games
-using a little script I wrote some time back.
-
-<!--break-->
 
     $ cat pullab
     #!/bin/bash
@@ -53,7 +53,7 @@ Backup Extractor][abe].  A bit of web searching turns up the
 [development page][abedev].  Reading through the documentation, I
 learned that the output of the `adb backup` command is simply an
 extended tape archive and `abe.jar` handles the interconversion between
-the formats!  
+the formats!
 
 A word of warning: `abe.jar` requires a [Java Runtime Environment of
 7][jre7] which apparently was not already installed on my MacBook Pro.

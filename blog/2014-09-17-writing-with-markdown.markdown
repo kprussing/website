@@ -1,19 +1,34 @@
 ---
-layout: post
 title: Writing in the Terminal
+author: Keith F. Prussing
+date: 2014-09-17
+abstract: >
+    So, I have been writing with plain text files for a while.  I've
+    plaid around with HTML and LaTeX extensively.  Once I discovered the
+    joys of vim, I slowly began to do all of my editing within a
+    terminal emulator.  Initially, I worked directly with the before
+    mentioned markup languages.  Recently, I learned about [Pandoc] and
+    that let me give up on HTML by using [Markdown], but I still wrote
+    my scientific papers directly with LaTeX.  Now I think it is time to
+    make the full switch.
+post: true
 ---
 
-So, I have been writing with plain text files for a while.  I've plaid
-around with HTML and LaTeX extensively.  Once I discovered the joys of
-vim, I slowly began to do all of my editing within a terminal emulator.
-Initially, I worked directly with the before mentioned markup languages.
-Recently, I learned about [pandoc] and that let me give up on HTML by
-using [Markdown], but I still wrote my scientific papers directly with
-LaTeX.  Now I think it is time to make the full switch.
 
-<!--break-->
 Writing with Markdown
 ---------------------
+
+::: Note :::
+I no longer really use or recommend using Markdown to do serious writing
+(as of 2020-02-02).  Ultimately, Markdown is good for short notes or
+very simple documents, but I kept finding myself writing filters to
+actually get Pandoc to do what I need it to do.  To add insult to
+injury, Pandoc is *not* a full LaTeX parser.  I kept finding myself
+having to work around its limitations by inserting LaTeX directly into
+the file which defeats the purpose.  My solution has been to just use
+LaTeX directly (or Word when I have to, although I will write a draft in
+Markdown and use Pandoc to do the initial conversion).
+::::::::::::
 
 So, I have come to the realization that LaTeX is not the best way to
 write.  By the looks of it, I am not the [first][fenner_what_2013] or

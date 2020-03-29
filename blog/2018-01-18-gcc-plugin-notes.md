@@ -1,12 +1,12 @@
 ---
-layout: post
 title: Notes on writing a GCC plugin
+date: 2018-01-18
+author: Keith F. Prussing, Ph.D.
+abstract: >
+    Here are notes on some of my discoveries while working on a plugin
+    for GCC.
+layout: post
 ---
-
-Here are notes on some of my discoveries while working on a plugin for
-GCC.
-
-<!--break-->
 
 Callback arguments
 ------------------
@@ -77,3 +77,15 @@ warnings about that.
 
 I just put it in a header 'package-config.h' with the appropriate
 `#include` to use in additional files.
+
+## Edit 2020-03-29
+
+The original purpose for writing a plugin was to concoct a way to
+generate the Fortran 2003 interface module given a C header.  It sort of
+worked, but not well enough to put it out in the world.  I came back to
+it (again) the other night to take another stab.  But then I was
+googling a different problem and came across [this
+article](https://arxiv.org/pdf/1904.02546.pdf).  It looks like they beat
+me to the punch.  Oh well.  But at least I have a new project to keep an
+eye on!
+
