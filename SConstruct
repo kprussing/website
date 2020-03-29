@@ -4,7 +4,6 @@ import os
 
 PANDOCFLAGS = [
         "--metadata-file", File("metadata.yaml").name,
-        "--data-dir", Dir(os.path.join("#", "templates")).name,
         "--filter", File("filters.py").name,
     ]
 
@@ -14,6 +13,9 @@ env = Environment(ENV=os.environ, PDFLATEX="lualatex",
                   PANDOCFLAGS=" ".join(PANDOCFLAGS))
 
 base = env.Clone()
+html_flags =  ["", "--template",
+               os.path.join("templates", "website.html")]
+base.Append(PANDOCFLAGS=" ".join(html_flags))
 styles, icons = SConscript(os.path.join("static", "SConscript"),
                            exports={"env" : base})
 for s in styles + icons:
