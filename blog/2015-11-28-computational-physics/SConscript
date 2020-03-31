@@ -20,4 +20,5 @@ _ = env.Clone()
 _.Append(PANDOCFLAGS=" --mathjax --resource-path=.:" + Dir(prefix).path)
 _.Pandoc(os.path.join(prefix, "index.html"), "index.md")
 
-
+source = File("index.md")
+Return("source")

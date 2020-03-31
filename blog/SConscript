@@ -1,11 +1,18 @@
 #!/usr/bin/env python
+from __future__ import unicode_literals
 
+import io
 import os
+import re
+import subprocess
+
+import panflute
 
 Import("env")
 
 prefix = os.path.join(env["prefix"], Dir(os.curdir).name)
 
+source = []
 for src in ("2014-01-17-henson-prayer.markdown",
             "2014-09-17-Hello-World.markdown",
             "2014-09-17-writing-with-markdown.markdown",
@@ -21,6 +28,7 @@ for src in ("2014-01-17-henson-prayer.markdown",
             "2018-01-18-gcc-plugin-notes.md",
             "2020-03-10-reformatting-the-website.md",
             ):
+    source.append(src)
     root, _ = os.path.splitext(src)
     env.Pandoc(os.path.join(prefix, root + ".html"), src)
 
@@ -29,11 +37,61 @@ math = env.Clone()
 math.Append(PANDOCFLAGS=" --mathjax")
 for src in ("2014-09-27-least-squares.markdown",
             ):
+    source.append(src)
     root, _ = os.path.splitext(src)
     math.Pandoc(os.path.join(prefix, root + ".html"), src)
 
 Export("env prefix")
 for subdir in ("2015-11-28-computational-physics",
                ):
-    SConscript(os.path.join(subdir, "SConscript"))
+    src = SConscript(os.path.join(subdir, "SConscript"))
+    source.append(src)
 
+def gen_index(target, source, env):
+    """Generate the landing page for the blog posts.
+    """
+    data = []
+    for src in source:
+        cmd = [env["PANDOC"], "--to", "json", src.path]
+        proc = subprocess.Popen(cmd, stdout=subprocess.PIPE,
+                                stderr=subprocess.PIPE,
+                                universal_newlines=True)
+        stdout, stderr = proc.communicate()
+        if proc.returncode != 0:
+            print("Error reading {0}".format(src))
+            print("Message: '{0}'".format(stderr))
+            return proc.returncode
+
+        doc = panflute.load(io.BytesIO(stdout))
+        data.append([doc.get_metadata(x, "")
+                    for x in ("date", "title", "abstract")] + [src.path])
+
+        text = ["---\ntitle: My Musings\n...", "::: {.posts}"]
+
+    for post in sorted(data, key=lambda x: x[0], reverse=True):
+        dirname, basename = os.path.split(post[3])
+        while not re.search(env["base"] + "$", dirname):
+            dirname, base = os.path.split(dirname)
+            basename = os.path.join(base, basename)
+
+        link, _ = os.path.splitext(basename)
+        text.append("::: {.post}")
+        text.append("# [{0}]({1})".format(post[1].strip(), link + ".html"))
+        text.append("::: {.entry}")
+        text.append(post[2].strip() +
+                    " [read more]({0}){{.readmore}}".format(link + ".html")
+                   )
+        text.append("::::::::::::")
+        text.append(":::::::::::")
+
+    text.append("::::::::::::") 
+
+    cmd = " ".join([env["PANDOC"], env["PANDOCFLAGS"],
+                    "--from", "markdown", "-o", target[0].path])
+    proc = subprocess.Popen(cmd.split(), stdin=subprocess.PIPE,
+                            universal_newlines=True)
+    proc.communicate("\n\n".join(text).encode("utf-8"))
+    proc.wait()
+
+env.Command(os.path.join(prefix, "index.html"), source,
+            action=gen_index, base=Dir(os.curdir).name)
