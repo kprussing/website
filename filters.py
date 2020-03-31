@@ -67,7 +67,7 @@ def masthead(doc):
         "\t\t\t<nav>",
         "\t\t\t" + nav.format(url, "website/index.html", "Home"),
         "\t\t\t" + nav.format(url, "website/about.html", "About"),
-        "\t\t\t" + nav.format(url, "website/blog.html", "Blog"),
+        "\t\t\t" + nav.format(url, "website/blog/index.html", "Blog"),
         "\t\t\t" + nav.format(url, "website/fun/index.html", "Fun"),
         "\t\t\t" + nav.format(url, "resume/index.html", "Resume"),
         "\t\t\t</nav>",
