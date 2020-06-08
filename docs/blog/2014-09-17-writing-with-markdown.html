@@ -140,7 +140,7 @@ margin: 1em 0;
 }
 a {
 color: var(--links);
-text-decoration: none;
+
 cursor: pointer;
 }
 a:hover, a:active {
@@ -155,8 +155,14 @@ font-style: italic;
 string, b{
 font-weight: bold;
 }
+.author {
+font-style: italic;
+font-size: large;
+color: var(--quote);
+}
 .date {
 font-style: italic;
+font-size: large;
 color: var(--quote);
 }
 
@@ -279,10 +285,60 @@ color: var(--links);
 }
 }
 
+.posts > .post {
+padding-bottom: 2em;
+border-bottom: 1px solid var(--footer);
+}
+.posts a.read-more {
+text-transform: uppercase;
+font-size: small;
+font-weight: bold;
+}
+.posts > .post:last-child {
+padding-bottom: 1em;
+border-bottom: none;
+}
+.post .blockquote {
+margin: 1.8em 0.8em;
+border-left: 2px solid var(--quotes);
+padding: 0.1em 1em;
+color: var(--quotes);
+font-size: 1.375em;
+font-style: italic;
+}
+
 ::selection {
 color: #000000;
 background: var(--quote);
 }
+</style>
+  <style type="text/css">
+.highlight {
+background-color: #3F3F3F;
+padding: 5px 10px;
+margin: 20px 0;
+}
+.highlight pre {
+word-break: break-all;
+work-warp: break-word;
+}
+code {
+font-family: var(--code-font);
+font-size: 0.9em;
+color: #DCDCCC;
+}
+
+.highlight .c, .highlight .c1 {
+color: #7F9F7F;
+font-style: italic;
+}
+
+.highlight .err {
+color: #80D4AA;
+font-style: bold;
+}
+
+
 </style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
@@ -322,14 +378,14 @@ background: var(--quote);
 <p>So, I have come to the realization that LaTeX is not the best way to write. By the looks of it, I am not the <a href="http://blog.martinfenner.org/2013/06/17/what-is-scholarly-markdown/">first</a> or <a href="http://recurrentprocessing.blogspot.fi/2013/02/write-academic-papers-with-markdown.html">second</a>, and I probably won’t be the last. Thankfully, with the emergence of <a href="http://commonmark.org">CommonMark</a>, I can possibly make some head way. The beauty of <a href="http://daringfireball.net/projects/markdown/syntax">Markdown</a> is the readability of the source file. I am a big fan of splitting content and format. I already live in the command line so the plain text files makes my life easier. By using <code>pandoc</code>, I can convert to HTML, PDF, or Word, but the challenge is getting the citations in place. This documents my path to getting the citations to work with <code>pandoc</code>.</p>
 <h3 id="installation">Installation</h3>
 <p>The first order of business is to get things installed. I’m on OS X, so I use <a href="http://www.macports.org">MacPorts</a>. To get <code>pandoc</code> we simply call</p>
-<pre><code>$ sudo port install pandoc</code></pre>
+<pre class="highlight"><code>$ sudo port install pandoc</code></pre>
 <p>According to the manual, to add a bibliography, I need <code>pandoc-citeproc</code>, but it does not appear to be in MacPorts. Rooting around on the <a href="https://github.com/jgm/pandoc-citeproc">repository</a>, it appears that this has been recently removed from <code>pandoc</code>. This would explain why it is not evident. So, we go directly to the Haskell method</p>
-<pre><code>$ sudo port install haskell-platform # To get cabal
+<pre class="highlight"><code>$ sudo port install haskell-platform # To get cabal
 $ cabal install pandoc-citeproc</code></pre>
 <p>And then simply add <code>~/.cabal/bin</code> to your <code>PATH</code>.</p>
 <h3 id="running-pandoc">Running <code>pandoc</code></h3>
 <p>Now to try to make a test case</p>
-<pre><code>$ cat test.text
+<pre class="highlight"><code>$ cat test.text
 
 A Title
 =======
@@ -356,7 +412,7 @@ $ pandoc test.text -o test.pdf \
 <p>And this gives me a lovely PDF! Granted, none of this is really new.</p>
 <h3 id="customizing-the-output">Customizing the Output</h3>
 <p>Now, what if I want to use a specific format such a that for PRB? I could possibly use the <code>--reference-docx=FILE</code> option if the journal offers that; however, PRB does not. The <code>-H FILE</code> flag will be useful for adding in the preamble if necessary. I think I might be able to use the <code>.sty</code> file from the publisher, but that won’t let us set the options to <code>documentclass</code>. I think the ultimate answer will be to generate the <code>.latex</code> and then hand hack it to set the document class correctly.</p>
-<pre><code>$ pandoc --standalone test.text -o test.latex -H preamble.tex
+<pre class="highlight"><code>$ pandoc --standalone test.text -o test.latex -H preamble.tex
 $ vim test.latex # Fix the document class
 $ pdflatex test
 $ bibtex test
@@ -368,11 +424,11 @@ $ pdflatex test</code></pre>
 <p>Now that I have a way to write neat files, I need to worry about editing. This derives from my attempt to create an editing work flow for my thesis. I read through the silly thing and marked it up with my trusty red pen. I was then stuck with how to automate searching for misspellings and blatant grammatical errors. As I mentioned above, at this point I was still using LaTeX so I had a bunch of plain text files that I didn’t really want to convert to something like Word just to get the automated grammar and spelling checkers. A web search turned up <a href="http://tex.stackexchange.com/questions/6333/grammar-checking-tool-for-use-with-latex">this</a> discussion and one of the answers was the <a href="http://dsl.org/cookbook/cookbook_15.html#SEC220">Writer’s Workbench</a>. The specific tools that looked promising are <code>aspell</code> and <code>diction</code>. And the bonus is that both are on MacPorts!</p>
 <h3 id="working-with-aspell">Working with <code>aspell</code></h3>
 <p>Here is the real trick: how do I get spell checking to work intelligently? According to the <code>info</code> page, it is as simple as</p>
-<pre><code>$ aspell check file.text</code></pre>
+<pre class="highlight"><code>$ aspell check file.text</code></pre>
 <p>However, the trick is the author names and technical jargon gets in the way. I could just add each one to the dictionary; however, I don’t really want to pollute a personal dictionary with project specific words that I may never use again. It’s one thing if <em>my</em> name is in there, but often, many names I will never reference again. So, I need a project specific list of words.</p>
 <p>First, we tackle the author names. I am using <a href="https://www.zotero.org">Zotero</a> to manage my bibliography. This allows me to keep organized and has an option to export to a BibTex file! It is plain text, so it can easily be parsed to find the author names. We just have to look for the <code>author</code> fields and parse what is within the <code>{}</code>. The trick was splitting on the <code>and</code> token. A blind tokenizing on <code>and</code> leads to breaking the occasional name. The workaround was to split at the spaces and collect the full names together. Care was needed when a name contained <code>and</code>, but it was manageable. I made wrote a script <code>ztbib2spl</code> for future use and put it in my <a href="https://github.com/kprussing/dotfiles"><code>dotfiles/scripts</code></a> folder.</p>
 <p>Now we have a word list of author names to pass to <code>aspell</code> to ignore! Reading through the documentation, we first need to clean the list of bad characters</p>
-<pre><code>$ echo &#39;personal_ws-1.1 en 0&#39; &gt; authornames.en.pws
+<pre class="highlight"><code>$ echo &#39;personal_ws-1.1 en 0&#39; &gt; authornames.en.pws
 $ ztbib2spl reference.bib &gt; authornames.text
 $ aspell --lang=en --local-data-dir . clean &lt; authornames.text &gt;&gt; authornames.en.pws
 $ aspell --personal=./authornames.en.pws check file.text</code></pre>

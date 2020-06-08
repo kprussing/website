@@ -140,7 +140,7 @@ margin: 1em 0;
 }
 a {
 color: var(--links);
-text-decoration: none;
+
 cursor: pointer;
 }
 a:hover, a:active {
@@ -155,8 +155,14 @@ font-style: italic;
 string, b{
 font-weight: bold;
 }
+.author {
+font-style: italic;
+font-size: large;
+color: var(--quote);
+}
 .date {
 font-style: italic;
+font-size: large;
 color: var(--quote);
 }
 
@@ -279,10 +285,60 @@ color: var(--links);
 }
 }
 
+.posts > .post {
+padding-bottom: 2em;
+border-bottom: 1px solid var(--footer);
+}
+.posts a.read-more {
+text-transform: uppercase;
+font-size: small;
+font-weight: bold;
+}
+.posts > .post:last-child {
+padding-bottom: 1em;
+border-bottom: none;
+}
+.post .blockquote {
+margin: 1.8em 0.8em;
+border-left: 2px solid var(--quotes);
+padding: 0.1em 1em;
+color: var(--quotes);
+font-size: 1.375em;
+font-style: italic;
+}
+
 ::selection {
 color: #000000;
 background: var(--quote);
 }
+</style>
+  <style type="text/css">
+.highlight {
+background-color: #3F3F3F;
+padding: 5px 10px;
+margin: 20px 0;
+}
+.highlight pre {
+word-break: break-all;
+work-warp: break-word;
+}
+code {
+font-family: var(--code-font);
+font-size: 0.9em;
+color: #DCDCCC;
+}
+
+.highlight .c, .highlight .c1 {
+color: #7F9F7F;
+font-style: italic;
+}
+
+.highlight .err {
+color: #80D4AA;
+font-style: bold;
+}
+
+
 </style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
@@ -315,7 +371,7 @@ background: var(--quote);
 <p class="date">2014-10-12</p>
 </header>
 <div class="abstract"><p>A few weeks ago, the wife’s Samsung Galaxy S2 took the final plunge and bit the dust (mostly). It wound up caught in a cycle of powering on and off. Luckily, I was able to fiddle with it enough to grab the <code>highscores.lua</code> and <code>settings.lua</code> files from her Angry Birds games using a little script I wrote some time back.</p></div>
-<pre><code>$ cat pullab
+<pre class="highlight"><code>$ cat pullab
 #!/bin/bash
 abs=$( adb shell pm list packages | \
         awk &#39;{RS=&quot;\r&quot;} /rovio/ {sub(/package:/,&quot;&quot;); print $1}&#39; \
@@ -340,13 +396,13 @@ done</code></pre>
 <p>One of the tools mentioned on the Angry Birds Nest guide is the <a href="http://sourceforge.net/projects/adbextractor/">Android Backup Extractor</a>. A bit of web searching turns up the <a href="https://github.com/nelenkov/android-backup-extractor">development page</a>. Reading through the documentation, I learned that the output of the <code>adb backup</code> command is simply an extended tape archive and <code>abe.jar</code> handles the interconversion between the formats!</p>
 <p>A word of warning: <code>abe.jar</code> requires a <a href="http://www.oracle.com/technetwork/java/javase/downloads/jre7-downloads-1880261.html">Java Runtime Environment of 7</a> which apparently was not already installed on my MacBook Pro. Hunting down that fact took a couple of hours.</p>
 <p>Now, to get things rolling, download the desired versions of Angry Birds and complete one level. This will ensure that the file structure for the games are in place. Now make a backup of the games and convert to a tape archive.</p>
-<pre><code>$ adb backup -apk -f angrybirds.orig.ab $(ls -d com.rovio.angry*)
+<pre class="highlight"><code>$ adb backup -apk -f angrybirds.orig.ab $(ls -d com.rovio.angry*)
 $ java -jar abe.jar unpack angrybirds.orig.ab angrybirds.orig.tar
 $ tar -xf angrybirds.orig.tar
 $ tar -tf angrybirds.orig.tar &gt; angrybirds.list</code></pre>
 <p>The first step above creates a backup of the games we want and includes the application file. Supposedly, the application file is not necessary, but I couldn’t get the restore to work properly without it. The subshell launched simply creates a list of all Rovio games I extracted files for with the script shown above. The second and third steps convert and extract the archive. The fourth step is necessary for repacking the data after we have updated the files. Apparently, <a href="http://nelenkov.blogspot.com/2012/06/unpacking-android-backups.html">the order of the files in the archive</a> is critical for performing the restore.</p>
 <p>Now I was able to explicitly update the files and generate a new tape archive which can be converted to an Android backup.</p>
-<pre><code>$ for f in $(ls -d com.rovio.angry*); do 
+<pre class="highlight"><code>$ for f in $(ls -d com.rovio.angry*); do 
 &gt; cp -i $f/*.lua apps/$f/f
 &gt; done
 $ star -c -f angrybirds.tar -no-dirslash list=angrybirds.list
@@ -355,7 +411,7 @@ $ adb restore angrybirds.ab.</code></pre>
 <p>And my wife was able to get back to popping pigs! Now, a few notes: First, when I was originally trying to create the tape archive, I tried using <code>tar</code>, but that does not preserve the order of the files. I attempted to use <code>pax</code>, but I found files with long names. That meant I had to use <code>star</code> instead. Second, I was able to get all of this to work by getting the application file even though it is supposedly not necessary. Finally, in the future just use <code>adb backup</code>. The advantage of all of this was I got to learn more about the Android backup files and discovered two new command line tools that hadn’t crossed my radar yet: <code>pax</code> and <code>star</code>.</p>
 <hr />
 <p>EDIT 2014-11-22: While in the process of cleaning up my computer to do a clean install of Yosemite, I came across one other script I used to pull data off of my old Android phones. As I already discussed above, this really a pointless script now. However, I don’t want to just throw it out and lose my notes. I also don’t want to create a repository just for it, and I don’t want it in my <code>dotfiles</code>. So, I’ll just put it here.</p>
-<pre><code>$ cat phonebu
+<pre class="highlight"><code>$ cat phonebu
 #!/bin/bash
 
 # We will also need to pull the apks to finish backing up the apps.

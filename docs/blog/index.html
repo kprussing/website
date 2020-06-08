@@ -139,7 +139,7 @@ margin: 1em 0;
 }
 a {
 color: var(--links);
-text-decoration: none;
+
 cursor: pointer;
 }
 a:hover, a:active {
@@ -154,8 +154,14 @@ font-style: italic;
 string, b{
 font-weight: bold;
 }
+.author {
+font-style: italic;
+font-size: large;
+color: var(--quote);
+}
 .date {
 font-style: italic;
+font-size: large;
 color: var(--quote);
 }
 
@@ -278,10 +284,60 @@ color: var(--links);
 }
 }
 
+.posts > .post {
+padding-bottom: 2em;
+border-bottom: 1px solid var(--footer);
+}
+.posts a.read-more {
+text-transform: uppercase;
+font-size: small;
+font-weight: bold;
+}
+.posts > .post:last-child {
+padding-bottom: 1em;
+border-bottom: none;
+}
+.post .blockquote {
+margin: 1.8em 0.8em;
+border-left: 2px solid var(--quotes);
+padding: 0.1em 1em;
+color: var(--quotes);
+font-size: 1.375em;
+font-style: italic;
+}
+
 ::selection {
 color: #000000;
 background: var(--quote);
 }
+</style>
+  <style type="text/css">
+.highlight {
+background-color: #3F3F3F;
+padding: 5px 10px;
+margin: 20px 0;
+}
+.highlight pre {
+word-break: break-all;
+work-warp: break-word;
+}
+code {
+font-family: var(--code-font);
+font-size: 0.9em;
+color: #DCDCCC;
+}
+
+.highlight .c, .highlight .c1 {
+color: #7F9F7F;
+font-style: italic;
+}
+
+.highlight .err {
+color: #80D4AA;
+font-style: bold;
+}
+
+
 </style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
@@ -300,7 +356,7 @@ background: var(--quote);
 			<nav>
 			<a href="http://kprussing.github.io/website/index.html">Home</a>
 			<a href="http://kprussing.github.io/website/about.html">About</a>
-			<a href="http://kprussing.github.io/website/blog.html">Blog</a>
+			<a href="http://kprussing.github.io/website/blog/index.html">Blog</a>
 			<a href="http://kprussing.github.io/website/fun/index.html">Fun</a>
 			<a href="http://kprussing.github.io/resume/index.html">Resume</a>
 			</nav>
@@ -313,28 +369,34 @@ background: var(--quote);
 <p class="author">Keith F Prussing, Ph.D.</p>
 </header>
 <div class="posts">
+<section id="an-open-letter-to-the-mayor-and-city-council-of-doraville-ga" class="post">
+<h1><a href="2020-06-an-open-letter-to-council.html">An Open Letter to the Mayor and City Council of Doraville, GA</a></h1>
+<div class="entry">
+<p>The events of the past week have made me take stock and reflect on what part I have played in the over all structure of our society. The answer I arrived at was: I’m awful because I haven’t done anything. I have sat quietly safe in my home and approved of the actions of others, but I have not taken any real action. I may have commiserated with others that already agree with me, but that is not enough. <a href="2020-06-an-open-letter-to-council.html" class="read-more">read more</a></p>
+</div>
+</section>
 <section id="reformatting-my-website" class="post">
 <h1><a href="2020-03-10-reformatting-the-website.html">Reformatting my Website</a></h1>
 <div class="entry">
-<p>I recently decided I wanted to update my website with a new post. But the post I wanted to write was too complicated to keep in a single post. That’s when I discovered that Jekyll isn’t quite up to the task of managing my website as it grows. This is a post about how I migrated to a new static site generation process. <a href="2020-03-10-reformatting-the-website.html" class="readmore">read more</a></p>
+<p>I recently decided I wanted to update my website with a new post. But the post I wanted to write was too complicated to keep in a single post. That’s when I discovered that Jekyll isn’t quite up to the task of managing my website as it grows. This is a post about how I migrated to a new static site generation process. <a href="2020-03-10-reformatting-the-website.html" class="read-more">read more</a></p>
 </div>
 </section>
 <section id="notes-on-writing-a-gcc-plugin" class="post">
 <h1><a href="2018-01-18-gcc-plugin-notes.html">Notes on writing a GCC plugin</a></h1>
 <div class="entry">
-<p>Here are notes on some of my discoveries while working on a plugin for GCC. <a href="2018-01-18-gcc-plugin-notes.html" class="readmore">read more</a></p>
+<p>Here are notes on some of my discoveries while working on a plugin for GCC. <a href="2018-01-18-gcc-plugin-notes.html" class="read-more">read more</a></p>
 </div>
 </section>
 <section id="unified-command-line-in-windows" class="post">
 <h1><a href="2017-01-19-unified-terminal.html">Unified Command Line in Windows</a></h1>
 <div class="entry">
-<p>Some working notes on getting a unified terminal experience on Windows. The ultimate problem is every tool set for Windows wants to install a complete GNU environment and doesn’t bother checking if you already have one installed. The ultimate kicker is: you basically can’t do it. <a href="2017-01-19-unified-terminal.html" class="readmore">read more</a></p>
+<p>Some working notes on getting a unified terminal experience on Windows. The ultimate problem is every tool set for Windows wants to install a complete GNU environment and doesn’t bother checking if you already have one installed. The ultimate kicker is: you basically can’t do it. <a href="2017-01-19-unified-terminal.html" class="read-more">read more</a></p>
 </div>
 </section>
 <section id="getting-glx-working-with-x-forwarding" class="post">
 <h1><a href="2016-06-05-glx-and-xquartz.html">Getting GLX Working with X Forwarding</a></h1>
 <div class="entry">
-<p>Some notes on how to get indirect rendering working with X forwarding on an ssh connection. <a href="2016-06-05-glx-and-xquartz.html" class="readmore">read more</a></p>
+<p>Some notes on how to get indirect rendering working with X forwarding on an ssh connection. <a href="2016-06-05-glx-and-xquartz.html" class="read-more">read more</a></p>
 </div>
 </section>
 <section id="starting-x-under-cygwin" class="post">
@@ -342,73 +404,73 @@ background: var(--quote);
 <div class="entry">
 <p>This is just a quick note to myself so I can delete it from my desktop. After installing the X server from Cygwin, the server can be launched using</p>
 <p>$ XWin -multiwindow -clipboard -silent-dup-errto let Windows handle the windowing. To launch X at log in, use /bin/run. This boils down to creating a shortcut and setting the target to</p>
-<p>C:.exe XWin -multiwindow -clipboard -silent-dup-errorThen, place the short cut in the start up directory. <a href="2016-01-18-cygwin-note.html" class="readmore">read more</a></p>
+<p>C:.exe XWin -multiwindow -clipboard -silent-dup-errorThen, place the short cut in the start up directory. <a href="2016-01-18-cygwin-note.html" class="read-more">read more</a></p>
 </div>
 </section>
 <section id="playing-with-computational-physics" class="post">
 <h1><a href="2015-11-28-computational-physics/index.html">Playing with Computational Physics</a></h1>
 <div class="entry">
-<p>At some point during the process of working through my dissertation, I got so bogged down in the process of doing the work, I forgot a bit why I was so intrigued when I started. I was going through the motions, but not really finding the fun of physics. Sure, programming is fun in and of itself, but I was missing the physics. So, now that I have free time to pursue a hobby, I want to go back and remind myself why I started down this path. <a href="2015-11-28-computational-physics/index.html" class="readmore">read more</a></p>
+<p>At some point during the process of working through my dissertation, I got so bogged down in the process of doing the work, I forgot a bit why I was so intrigued when I started. I was going through the motions, but not really finding the fun of physics. Sure, programming is fun in and of itself, but I was missing the physics. So, now that I have free time to pursue a hobby, I want to go back and remind myself why I started down this path. <a href="2015-11-28-computational-physics/index.html" class="read-more">read more</a></p>
 </div>
 </section>
 <section id="setting-a-break-point-under-pyqt" class="post">
 <h1><a href="2015-08-24-debug-pyqt-application.html">Setting a Break Point Under PyQt</a></h1>
 <div class="entry">
-<p>This is simply a note to myself so I can quit googling how to do this. From this answer on Stack Overflow, to set a break point in a PyQt4 application insert <a href="2015-08-24-debug-pyqt-application.html" class="readmore">read more</a></p>
+<p>This is simply a note to myself so I can quit googling how to do this. From this answer on Stack Overflow, to set a break point in a PyQt4 application insert <a href="2015-08-24-debug-pyqt-application.html" class="read-more">read more</a></p>
 </div>
 </section>
 <section id="getting-pytables-to-play-nice-with-windows" class="post">
 <h1><a href="2015-08-10-pytables-and-windows.html">Getting PyTables to Play Nice with Windows</a></h1>
 <div class="entry">
-<p>I originally started this as a wiki page on my fork of ViTables. After trying to understand why ViTables would crash on some Windows boxes but not others, I found out that it had nothing to do with ViTables. So, I’ll just put it here. These are primarily the notes I wrote while digging into the problem. tl;dr: Your Python installation on Windows is stupid and needs to be reinstalled. <a href="2015-08-10-pytables-and-windows.html" class="readmore">read more</a></p>
+<p>I originally started this as a wiki page on my fork of ViTables. After trying to understand why ViTables would crash on some Windows boxes but not others, I found out that it had nothing to do with ViTables. So, I’ll just put it here. These are primarily the notes I wrote while digging into the problem. tl;dr: Your Python installation on Windows is stupid and needs to be reinstalled. <a href="2015-08-10-pytables-and-windows.html" class="read-more">read more</a></p>
 </div>
 </section>
 <section id="yay-package-managers" class="post">
 <h1><a href="2015-07-16-yay-package-managers.html">Yay Package Managers…</a></h1>
 <div class="entry">
-<p>So, today I log into one of my RHEL6 machines and notice that yum says there are some updates to apply. <a href="2015-07-16-yay-package-managers.html" class="readmore">read more</a></p>
+<p>So, today I log into one of my RHEL6 machines and notice that yum says there are some updates to apply. <a href="2015-07-16-yay-package-managers.html" class="read-more">read more</a></p>
 </div>
 </section>
 <section id="dumping-a-subversion-repository" class="post">
 <h1><a href="2015-05-13-dumping-svn-repo.html">Dumping a Subversion Repository</a></h1>
 <div class="entry">
-<p>After finishing my thesis work, I wanted to grab the revision history for both the software I developed and the writing of my dissertation. It was (is?) stored in a subversion server owned by the lab; however, I want all of that for my own purposes. <a href="2015-05-13-dumping-svn-repo.html" class="readmore">read more</a></p>
+<p>After finishing my thesis work, I wanted to grab the revision history for both the software I developed and the writing of my dissertation. It was (is?) stored in a subversion server owned by the lab; however, I want all of that for my own purposes. <a href="2015-05-13-dumping-svn-repo.html" class="read-more">read more</a></p>
 </div>
 </section>
 <section id="a-quick-note-on-installing-old-ports" class="post">
 <h1><a href="2015-03-24-a-quick-note-on-macports.html">A Quick Note on Installing Old Ports</a></h1>
 <div class="entry">
-<p>So, I recently discovered that something is wrong with Inkscape 0.91 available from MacPorts. When I attempt to convert a SVG to PDF+LaTeX, it doesn’t work. At first blush, it appears like a macro is not properly closed with a } character; however, I have not had a chance to create a minimum working example to reproduce this behavior. The problem is I need this to work for my dissertation. Trying the development port didn’t help because the lualatex was claiming that a page was missing. <a href="2015-03-24-a-quick-note-on-macports.html" class="readmore">read more</a></p>
+<p>So, I recently discovered that something is wrong with Inkscape 0.91 available from MacPorts. When I attempt to convert a SVG to PDF+LaTeX, it doesn’t work. At first blush, it appears like a macro is not properly closed with a } character; however, I have not had a chance to create a minimum working example to reproduce this behavior. The problem is I need this to work for my dissertation. Trying the development port didn’t help because the lualatex was claiming that a page was missing. <a href="2015-03-24-a-quick-note-on-macports.html" class="read-more">read more</a></p>
 </div>
 </section>
 <section id="salvaging-game-data-on-android" class="post">
 <h1><a href="2014-10-12-salvaging-game-data-on-android.html">Salvaging Game Data on Android</a></h1>
 <div class="entry">
-<p>A few weeks ago, the wife’s Samsung Galaxy S2 took the final plunge and bit the dust (mostly). It wound up caught in a cycle of powering on and off. Luckily, I was able to fiddle with it enough to grab the highscores.lua and settings.lua files from her Angry Birds games using a little script I wrote some time back. <a href="2014-10-12-salvaging-game-data-on-android.html" class="readmore">read more</a></p>
+<p>A few weeks ago, the wife’s Samsung Galaxy S2 took the final plunge and bit the dust (mostly). It wound up caught in a cycle of powering on and off. Luckily, I was able to fiddle with it enough to grab the highscores.lua and settings.lua files from her Angry Birds games using a little script I wrote some time back. <a href="2014-10-12-salvaging-game-data-on-android.html" class="read-more">read more</a></p>
 </div>
 </section>
 <section id="least-squares-fitting" class="post">
 <h1><a href="2014-09-27-least-squares.html">Least Squares Fitting</a></h1>
 <div class="entry">
-<p>This note is more for myself than for anyone else. I have derived the expression for the least squares fitting so many times it’s not funny. The problem is, once I cobble together the routine to perform the fitting, I completely forget how to do it again. I hope, this will prevent me from having to do it ever again if only because it is on my website. <a href="2014-09-27-least-squares.html" class="readmore">read more</a></p>
+<p>This note is more for myself than for anyone else. I have derived the expression for the least squares fitting so many times it’s not funny. The problem is, once I cobble together the routine to perform the fitting, I completely forget how to do it again. I hope, this will prevent me from having to do it ever again if only because it is on my website. <a href="2014-09-27-least-squares.html" class="read-more">read more</a></p>
 </div>
 </section>
 <section id="youre-up-and-running" class="post">
 <h1><a href="2014-09-17-Hello-World.html">You’re up and running!</a></h1>
 <div class="entry">
-<p>These are my initial notes on getting up and running with Jekyll. It’s very outdated now. <a href="2014-09-17-Hello-World.html" class="readmore">read more</a></p>
+<p>These are my initial notes on getting up and running with Jekyll. It’s very outdated now. <a href="2014-09-17-Hello-World.html" class="read-more">read more</a></p>
 </div>
 </section>
 <section id="writing-in-the-terminal" class="post">
 <h1><a href="2014-09-17-writing-with-markdown.html">Writing in the Terminal</a></h1>
 <div class="entry">
-<p>So, I have been writing with plain text files for a while. I’ve plaid around with HTML and LaTeX extensively. Once I discovered the joys of vim, I slowly began to do all of my editing within a terminal emulator. Initially, I worked directly with the before mentioned markup languages. Recently, I learned about Pandoc and that let me give up on HTML by using Markdown, but I still wrote my scientific papers directly with LaTeX. Now I think it is time to make the full switch. <a href="2014-09-17-writing-with-markdown.html" class="readmore">read more</a></p>
+<p>So, I have been writing with plain text files for a while. I’ve plaid around with HTML and LaTeX extensively. Once I discovered the joys of vim, I slowly began to do all of my editing within a terminal emulator. Initially, I worked directly with the before mentioned markup languages. Recently, I learned about Pandoc and that let me give up on HTML by using Markdown, but I still wrote my scientific papers directly with LaTeX. Now I think it is time to make the full switch. <a href="2014-09-17-writing-with-markdown.html" class="read-more">read more</a></p>
 </div>
 </section>
 <section id="the-henson-prayer" class="post">
 <h1><a href="2014-01-17-henson-prayer.html">The Henson Prayer</a></h1>
 <div class="entry">
-<p>To be read in the voice of Kermit (or your favorite Muppet) <a href="2014-01-17-henson-prayer.html" class="readmore">read more</a></p>
+<p>To be read in the voice of Kermit (or your favorite Muppet) <a href="2014-01-17-henson-prayer.html" class="read-more">read more</a></p>
 </div>
 </section>
 </div>

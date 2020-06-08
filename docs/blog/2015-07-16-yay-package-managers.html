@@ -140,7 +140,7 @@ margin: 1em 0;
 }
 a {
 color: var(--links);
-text-decoration: none;
+
 cursor: pointer;
 }
 a:hover, a:active {
@@ -155,8 +155,14 @@ font-style: italic;
 string, b{
 font-weight: bold;
 }
+.author {
+font-style: italic;
+font-size: large;
+color: var(--quote);
+}
 .date {
 font-style: italic;
+font-size: large;
 color: var(--quote);
 }
 
@@ -279,10 +285,60 @@ color: var(--links);
 }
 }
 
+.posts > .post {
+padding-bottom: 2em;
+border-bottom: 1px solid var(--footer);
+}
+.posts a.read-more {
+text-transform: uppercase;
+font-size: small;
+font-weight: bold;
+}
+.posts > .post:last-child {
+padding-bottom: 1em;
+border-bottom: none;
+}
+.post .blockquote {
+margin: 1.8em 0.8em;
+border-left: 2px solid var(--quotes);
+padding: 0.1em 1em;
+color: var(--quotes);
+font-size: 1.375em;
+font-style: italic;
+}
+
 ::selection {
 color: #000000;
 background: var(--quote);
 }
+</style>
+  <style type="text/css">
+.highlight {
+background-color: #3F3F3F;
+padding: 5px 10px;
+margin: 20px 0;
+}
+.highlight pre {
+word-break: break-all;
+work-warp: break-word;
+}
+code {
+font-family: var(--code-font);
+font-size: 0.9em;
+color: #DCDCCC;
+}
+
+.highlight .c, .highlight .c1 {
+color: #7F9F7F;
+font-style: italic;
+}
+
+.highlight .err {
+color: #80D4AA;
+font-style: bold;
+}
+
+
 </style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
@@ -316,7 +372,7 @@ background: var(--quote);
 </header>
 <div class="abstract"><p>So, today I log into one of my RHEL6 machines and notice that <code>yum</code> says there are some updates to apply.</p></div>
 <p>Trying to do a simple update gives</p>
-<pre><code>$ yum upgrade
+<pre class="highlight"><code>$ yum upgrade
  &lt;snip&gt;
 --&gt; Finished Dependency Resolution
 Error: Package: gnote-0.6.3-3.el6.x86_64 (@anaconda-RedHatEnterpriseLinux-201301301459.x86_64/6.4)
@@ -342,9 +398,9 @@ Error: Package: gnote-0.6.3-3.el6.x86_64 (@anaconda-RedHatEnterpriseLinux-201301
   You could try using --skip-broken to work around the problem
   You could try running: rpm -Va --nofiles --nodigest </code></pre>
 <p>Okay? Trying a Google search didn’t bring anything useful up for a while. At this point, I’m ready to start banging my head on the desk. And then, I came across <a href="https://www.ibm.com/developerworks/community/forums/html/topic?id=b3c4d2c9-32be-4c75-adcf-e754d266953f">this thread</a>. It turns out <code>gnote</code> wanted an old version of <code>boost</code>. The catch is, I don’t use <code>gnote</code>. I normally <code>ssh</code> in and use the terminal for everything. When I <em>do</em> sit down at the workstation, I prefer KDE. I have no use for <code>gnote</code> so it can just go away. Following the instructions I ran</p>
-<pre><code>$ rpm -qa | grep -e &quot;boost-.*-1\.41\.0.*&quot; | xargs rpm --test -e</code></pre>
+<pre class="highlight"><code>$ rpm -qa | grep -e &quot;boost-.*-1\.41\.0.*&quot; | xargs rpm --test -e</code></pre>
 <p>to check which programs wanted the specific version of boost and</p>
-<pre><code>$ yum remove gnote-0.6.3-3.el6.x86_64</code></pre>
+<pre class="highlight"><code>$ yum remove gnote-0.6.3-3.el6.x86_64</code></pre>
 <p>to remove the offending package. In the above, the boost version (or what ever is causing the issue) can be updated in the regex to <code>grep</code> and then the package simply removed. Now to get back to trying to write some documentation…</p>
 
 

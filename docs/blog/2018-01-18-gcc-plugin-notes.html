@@ -140,7 +140,7 @@ margin: 1em 0;
 }
 a {
 color: var(--links);
-text-decoration: none;
+
 cursor: pointer;
 }
 a:hover, a:active {
@@ -155,8 +155,14 @@ font-style: italic;
 string, b{
 font-weight: bold;
 }
+.author {
+font-style: italic;
+font-size: large;
+color: var(--quote);
+}
 .date {
 font-style: italic;
+font-size: large;
 color: var(--quote);
 }
 
@@ -279,10 +285,60 @@ color: var(--links);
 }
 }
 
+.posts > .post {
+padding-bottom: 2em;
+border-bottom: 1px solid var(--footer);
+}
+.posts a.read-more {
+text-transform: uppercase;
+font-size: small;
+font-weight: bold;
+}
+.posts > .post:last-child {
+padding-bottom: 1em;
+border-bottom: none;
+}
+.post .blockquote {
+margin: 1.8em 0.8em;
+border-left: 2px solid var(--quotes);
+padding: 0.1em 1em;
+color: var(--quotes);
+font-size: 1.375em;
+font-style: italic;
+}
+
 ::selection {
 color: #000000;
 background: var(--quote);
 }
+</style>
+  <style type="text/css">
+.highlight {
+background-color: #3F3F3F;
+padding: 5px 10px;
+margin: 20px 0;
+}
+.highlight pre {
+word-break: break-all;
+work-warp: break-word;
+}
+code {
+font-family: var(--code-font);
+font-size: 0.9em;
+color: #DCDCCC;
+}
+
+.highlight .c, .highlight .c1 {
+color: #7F9F7F;
+font-style: italic;
+}
+
+.highlight .err {
+color: #80D4AA;
+font-style: bold;
+}
+
+
 </style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
@@ -317,7 +373,7 @@ background: var(--quote);
 <div class="abstract"><p>Here are notes on some of my discoveries while working on a plugin for GCC.</p></div>
 <h2 id="callback-arguments">Callback arguments</h2>
 <p>I have been toying around with a plugin to GCC to generate a Fortran module source with the appropriate <code>bind(c)</code> settings from a C header file. According to the <a href="??">GCC internals manual</a>, the basic structure is</p>
-<pre><code>void callback(void * gcc_data, void * user_data)
+<pre class="highlight"><code>void callback(void * gcc_data, void * user_data)
 {
     ...
 };
@@ -329,7 +385,7 @@ int plugin_init(...)
     register_callback(..., callback, &amp;data)
 };</code></pre>
 <p>However, all of the tutorials online punt on how to actually pass arguments through the <code>user_data</code> by using <code>NULL</code>. This is not helpful if the plugin will be run in concurrent processes. Initially, I could not get the casting correct. After a bit of playing, I finally stumbled on the proper casting</p>
-<pre><code>void callback(void * gcc_data, void * user_data)
+<pre class="highlight"><code>void callback(void * gcc_data, void * user_data)
 {
     struct PACKAGE_NAME_data * data;
     data = reinterpret_cast&lt;struct PACKAGE_NAME_data *&gt;(user_data);
@@ -347,7 +403,7 @@ int plugin_init(...)
 <p>All the tutorials I could find online worked at the gate pass or at the final stage. I want to walk the tree immediately after the parsing is done and the AST has been assembled. I originally thought I wanted the <code>PLUGIN_PRE_GENERICIZE</code>, but that is not appropriate for C/C++ parsing (the manual says this in the section on GENERIC). It looks like the GIMPLE pass is where we get the full tree before push down. The <code>PLUGIN_OVERRIDE_GATE</code> appears to run too soon, but I’m still working on that.</p>
 <h2 id="working-with-autotools">Working with autotools</h2>
 <p>We need to undefine the macros set by autotools because the plugin framework defines them before we can. This simply suppresses the warnings about that.</p>
-<pre><code>#undef PACKAGE_BUGREPORT
+<pre class="highlight"><code>#undef PACKAGE_BUGREPORT
 #undef PACKAGE_NAME
 #undef PACKAGE_STRING
 #undef PACKAGE_TARNAME

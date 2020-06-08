@@ -89,7 +89,7 @@ p {
 }
 a {
     color: var(--links);
-    text-decoration: none;
+    /*text-decoration: none;*/
     cursor: pointer;
 }
 a:hover, a:active {
@@ -105,8 +105,14 @@ string, b{
     font-weight: bold;
 }
 
+.author {
+    font-style: italic;
+    font-size: large;
+    color: var(--quote);
+}
 .date {
     font-style: italic;
+    font-size: large;
     color: var(--quote);
 }
 
@@ -242,6 +248,32 @@ nav a {
         margin: 0 10px;
         color: var(--links);
     }
+}
+
+/*
+ * Formatting the posts
+ */
+.posts > .post {
+    padding-bottom: 2em;
+    border-bottom: 1px solid var(--footer);
+}
+.posts a.read-more {
+    text-transform: uppercase;
+    font-size: small;
+    font-weight: bold;
+}
+
+.posts > .post:last-child {
+    padding-bottom: 1em;
+    border-bottom: none;
+}
+.post .blockquote {
+    margin: 1.8em 0.8em;
+    border-left: 2px solid var(--quotes);
+    padding: 0.1em 1em;
+    color: var(--quotes);
+    font-size: 1.375em;
+    font-style: italic;
 }
 
 /*

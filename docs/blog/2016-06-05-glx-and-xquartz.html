@@ -140,7 +140,7 @@ margin: 1em 0;
 }
 a {
 color: var(--links);
-text-decoration: none;
+
 cursor: pointer;
 }
 a:hover, a:active {
@@ -155,8 +155,14 @@ font-style: italic;
 string, b{
 font-weight: bold;
 }
+.author {
+font-style: italic;
+font-size: large;
+color: var(--quote);
+}
 .date {
 font-style: italic;
+font-size: large;
 color: var(--quote);
 }
 
@@ -279,10 +285,60 @@ color: var(--links);
 }
 }
 
+.posts > .post {
+padding-bottom: 2em;
+border-bottom: 1px solid var(--footer);
+}
+.posts a.read-more {
+text-transform: uppercase;
+font-size: small;
+font-weight: bold;
+}
+.posts > .post:last-child {
+padding-bottom: 1em;
+border-bottom: none;
+}
+.post .blockquote {
+margin: 1.8em 0.8em;
+border-left: 2px solid var(--quotes);
+padding: 0.1em 1em;
+color: var(--quotes);
+font-size: 1.375em;
+font-style: italic;
+}
+
 ::selection {
 color: #000000;
 background: var(--quote);
 }
+</style>
+  <style type="text/css">
+.highlight {
+background-color: #3F3F3F;
+padding: 5px 10px;
+margin: 20px 0;
+}
+.highlight pre {
+word-break: break-all;
+work-warp: break-word;
+}
+code {
+font-family: var(--code-font);
+font-size: 0.9em;
+color: #DCDCCC;
+}
+
+.highlight .c, .highlight .c1 {
+color: #7F9F7F;
+font-style: italic;
+}
+
+.highlight .err {
+color: #80D4AA;
+font-style: bold;
+}
+
+
 </style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
@@ -316,7 +372,7 @@ background: var(--quote);
 </header>
 <div class="abstract"><p>Some notes on how to get indirect rendering working with X forwarding on an ssh connection.</p></div>
 <p>I finally figured out how to get the GLX working with XQuartz and the Red Hat machines. It ultimately boils down to enabling the indirect GLX which is no longer enabled by default for most X systems. For XQuartz, it’s a matter of updating to a recent version and passing the command <a href="https://bugs.freedesktop.org/show_bug.cgi?id=99146">see here</a>.</p>
-<pre><code>defaults write org.macosforge.xquartz.X11 enable_iglx -bool true</code></pre>
+<pre class="highlight"><code>defaults write org.macosforge.xquartz.X11 enable_iglx -bool true</code></pre>
 <p>Then, to get the rendering to happen on the remote machine, you <em>must</em> set <code>DISPLAY=:0.0</code>. I’m not sure why the login information is not sufficient, but I have better things to do that monkey around with that. Additionally, I determined that I had to log into a physical X session on the remote machine. This isn’t so bad for me because the target machine is sitting under my desk.</p>
 <p>To see what happens when setting the display, try observing the difference between <code>glxinfo</code> and <code>DISPLAY=0 glxinfo</code>. For me, the second one actually reported the correct video card. Take a look <a href="https://askubuntu.com/a/294773/708045">at this answer</a> for the enlightening details that brought me to this conclusion.</p>
 <h2 id="edit-2020-03-29">Edit 2020-03-29</h2>
