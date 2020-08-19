@@ -16,10 +16,10 @@ base = env.Clone()
 html_flags =  ["", "--template",
                os.path.join("templates", "website.html")]
 base.Append(PANDOCFLAGS=" ".join(html_flags))
-styles, icons = SConscript(os.path.join("static", "SConscript"),
-                           exports={"env" : base})
-for s in styles + icons:
-    base.Install(os.path.join(env["prefix"], os.path.dirname(s.path)), s)
+styles, _ = SConscript(os.path.join("static", "SConscript"),
+                       exports={"env" : base})
+for s in styles:
+    base.Append(PANDOCFLAGS=" --css " + s.path)
 
 base.AppendUnique(PANDOCFLAGS=" ".join(["",
                                         "--self-contained",

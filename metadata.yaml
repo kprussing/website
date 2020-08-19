@@ -10,8 +10,4 @@ footer-links:
   stackoverflow: 4923114
 url: http://kprussing.github.io
 license: cc-by
-
-css:
-  - static/meyer-reset.css
-  - static/style.css
 ...
