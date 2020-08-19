@@ -1,0 +1,64 @@
+/* A style sheet to help format the character sheet */
+body {
+    font-family: sans-serif;
+    font-size: medium;
+}
+
+div.header {
+    font-size: 1.5em;
+    background-color: #555555;
+    color: #FFFFFF;
+    padding: 0.1em;
+    font-variant: small-caps;
+    /*display: table-cell;*/
+    /*vertical-align: middle;*/
+}
+
+div.uline {
+    font-size: 1em;
+    border-bottom: thin solid #000000;
+}
+div.caption {
+    font-size: 0.5em;
+    text-transform: uppercase;
+}
+div.abox {
+    font-size: 1em;
+    border: thin solid #000000;
+    height: 2em;
+}
+
+/* Details for making tables! */
+table {
+    font-size: 0.8em;
+    text-align: center;
+    text-transform: uppercase;
+}
+td.rowlead {
+    /*text-align: right;*/
+    font-size: 1.2em;
+    font-weight: bold;
+    /* White text on grey background */
+    /*color: #FFFFFF;*/
+    /*background-color: #555555;*/
+}
+td.uline {
+    border-bottom: thin solid #000000;
+    font-size: 1em;
+}
+
+/* Make font 10 times bigger.  Mainly used in tables. */
+.big {
+    /*font-size: 10em;*/
+}
+.medium {
+    font-size: 6em;
+}
+
+/* 
+ * This is the flag to use small caps.  We'll want that for the skills.
+ */
+.skills {
+    font-variant: small-caps;
+}
+
