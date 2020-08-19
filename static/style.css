@@ -251,6 +251,12 @@ nav a {
     }
 }
 
+/* Code font */
+code {
+    font-family: var(--code-font);
+    font-size: 0.9em;
+}
+
 /*
  * Formatting the posts
  */
