@@ -63,7 +63,7 @@ def gen_index(target, source, env):
             print("Message: '{0}'".format(stderr))
             return proc.returncode
 
-        doc = panflute.load(io.BytesIO(stdout))
+        doc = panflute.load(io.StringIO(stdout))
         data.append([doc.get_metadata(x, "")
                     for x in ("date", "title", "abstract")] + [src.path])
 
@@ -91,7 +91,7 @@ def gen_index(target, source, env):
                     "--from", "markdown", "-o", target[0].path])
     proc = subprocess.Popen(cmd.split(), stdin=subprocess.PIPE,
                             universal_newlines=True)
-    proc.communicate("\n\n".join(text).encode("utf-8"))
+    proc.communicate("\n\n".join(text))
     proc.wait()
 
 env.Command(os.path.join(prefix, "index.html"), source,
