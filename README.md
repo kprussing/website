@@ -6,3 +6,9 @@ the rendered website.  To build the website, you'll need
 Unless otherwise noted, the text is licensed under the Creative Commons
 Attribution 4.0 License and any software is under the BSD 2 clause
 license.
+
+## Updating the website
+
+To make sure the latest version is pushed, use
+[hooks/pre-push](hooks/pre-push) by hand or link it into `.git/hooks`.
+

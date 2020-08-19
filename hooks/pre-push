@@ -1,0 +1,31 @@
+#!/bin/sh
+
+# Clean to make sure all CSS gets compiled in correctly
+if ! python3 `which scons` -c docs
+then
+    1>&2 echo Error cleaning the website
+    exit 1
+fi
+
+# Do a fresh clean to make sure we get the latest version of the website
+if ! python3 `which scons` docs
+then
+    1>&2 echo Error building docs
+    exit 2
+fi
+
+# Now check if we need to commit
+if ! git diff --quiet docs
+then
+    if ! git add docs
+    then
+        1>&2 echo Error adding the latest website
+        exit 3
+    fi
+    if ! git commit -m"Automatically built website"
+    then
+        1>&2 echo Error commiting the updated website
+        exit 4
+    fi
+fi
+
