@@ -80,7 +80,7 @@ def gen_index(target, source, env):
         text.append("# [{0}]({1})".format(post[1].strip(), link + ".html"))
         text.append("::: {.entry}")
         text.append(post[2].strip() +
-                    " [read more]({0}){{.readmore}}".format(link + ".html")
+                    " [read more]({0}){{.read-more}}".format(link + ".html")
                    )
         text.append("::::::::::::")
         text.append(":::::::::::")
