@@ -28,6 +28,7 @@ for src in ("2014-01-17-henson-prayer.markdown",
             "2018-01-18-gcc-plugin-notes.md",
             "2020-03-10-reformatting-the-website.md",
             "2020-06-an-open-letter-to-council.md",
+            "2020-09-18-open-letter-to-my-senators.md",
             ):
     source.append(src)
     root, _ = os.path.splitext(src)
